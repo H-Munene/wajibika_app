@@ -16,19 +16,17 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Wajibika' ,
+      title: 'Wajibika',
       theme: ThemeData(
         textTheme: GoogleFonts.montserratTextTheme(),
         colorScheme: const ColorScheme.light(),
-        useMaterial3: true,  
+        useMaterial3: true,
       ),
-    
       home: const LoginPage(),
-
       routes: {
-        '/login' : (context) => const LoginPage(),
-        '/register' : (context) => const RegisterPage(),
-        '/home' : (context) => const HomePage(),
+        '/login': (context) => const LoginPage(),
+        '/register': (context) => const RegisterPage(),
+        '/home': (context) => const HomePage(),
       },
     );
   }

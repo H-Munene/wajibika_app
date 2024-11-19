@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wajibika_app/utils/globals.dart' as globals;
+import 'package:wajibika_app/utils/validationservice.dart';
 import 'package:wajibika_app/widgets/image.dart';
 import 'package:wajibika_app/widgets/loginregisterbtn.dart';
 import 'package:wajibika_app/widgets/textButton.dart';
@@ -19,16 +20,6 @@ class _LoginPageState extends State<LoginPage> {
 
   //form key
   final _formKey = GlobalKey<FormState>();
-
-  //email validation
-  String? _emailValidator(String? email) {
-    return 'Please enter email address';
-  }
-
-  //password validation
-  String? _passwordValidator(String? password) {
-    return 'Please enter a password';
-  }
 
   //submit form
   void _submit() {
@@ -64,12 +55,12 @@ class _LoginPageState extends State<LoginPage> {
                       controller: emailController,
                       prependIcon: globals.emailPrependIcon,
                       placeholder: globals.emailPlaceholder,
-                      validator: _emailValidator),
+                      validator: ValidationService.emailValidator),
                   TextFormFieldWidget(
                     controller: passwordController,
                     prependIcon: globals.passwordPrependIcon,
                     placeholder: globals.passwordPlaceHolder,
-                    validator: _passwordValidator,
+                    validator: ValidationService.passwordValidator,
                     suffixIcon: globals.appendHidePasswordIcon,
                   ),
                   //login button
@@ -78,7 +69,8 @@ class _LoginPageState extends State<LoginPage> {
                       btnColor: globals.loginBtnColor,
                       buttonText: globals.loginBtnText),
                   //not a user? register
-                  TextButtonWidget(btnText: globals.notaUser, clickAction: _toRegister)
+                  TextButtonWidget(
+                      btnText: globals.notaUser, clickAction: _toRegister)
                 ],
               ),
             )

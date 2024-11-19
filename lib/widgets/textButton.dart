@@ -13,10 +13,13 @@ class TextButtonWidget extends StatelessWidget {
       padding: const EdgeInsets.only(top: 20),
       child: TextButton(
           onPressed: clickAction,
-          style: TextButton.styleFrom(overlayColor: Colors.transparent,),//remove overlay effect
+          style: TextButton.styleFrom(
+            overlayColor: Colors.transparent,
+          ), //remove overlay effect
           child: Text(
             btnText,
-            style: const TextStyle(color: Colors.blue,decoration: TextDecoration.underline),
+            style: const TextStyle(
+                color: Colors.blue, decoration: TextDecoration.underline),
           )),
     );
   }
