@@ -10,6 +10,7 @@ const double forgotpassBottomTitlePadding = 150;
 const double forgotpassTopTitlePadding = 45;
 const double ordersPageAllPadding = 20;
 
+//titles
 const String appTitle = 'Wajibika';
 
 //placeholders
@@ -35,12 +36,34 @@ const Icon passwordPrependIcon = Icon(Icons.key);
 const Icon appendShowPasswordIcon = Icon(Icons.visibility);
 const Icon appendHidePasswordIcon = Icon(Icons.visibility_off);
 
+// //image paths
+const String logo = 'assets/images/logo.png';
+
+//image dimensions
+const double logoheight = 115;
+const double logowidth = 115;
+const double appBarLogoWidth = 100;
+
 //base layout
 registerLoginLayout(Widget targetPage) {
   return Scaffold(
     appBar: AppBar(
-      title:
-          const Text(appTitle, style: TextStyle(fontStyle: FontStyle.italic)),
+      backgroundColor: primaryColor,
+      automaticallyImplyLeading: false,
+    ),
+    body: SafeArea(child: targetPage),
+  );
+}
+
+//for non regeister,login pages
+baseLayout(Widget targetPage) {
+  return Scaffold(
+    appBar: AppBar(
+      centerTitle: true,
+      title: const Image(
+        image: AssetImage(logo),
+        width: appBarLogoWidth,
+      ),
       backgroundColor: primaryColor,
       automaticallyImplyLeading: false,
     ),

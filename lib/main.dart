@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
       title: 'Wajibika' ,
       theme: ThemeData(
         textTheme: GoogleFonts.montserratTextTheme(),
+        colorScheme: const ColorScheme.light(),
         useMaterial3: true,  
       ),
     

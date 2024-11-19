@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wajibika_app/utils/globals.dart' as globals;
+import 'package:wajibika_app/widgets/image.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -13,17 +14,21 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return globals.registerLoginLayout(const Padding(
       padding: globals.LRPadding,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          //add image
+      child: Center(
+        child: Column(
+          children: [
+            //add image
 
-          //add titles
-
-          //add textformfields
-          
-          //login button
-        ],
+            //add titles
+            ImageWidget(
+                height: globals.logoheight,
+                width: globals.logowidth,
+                assetName: globals.logo),
+            //add textformfields
+            
+            //login button
+          ],
+        ),
       ),
     ));
   }
