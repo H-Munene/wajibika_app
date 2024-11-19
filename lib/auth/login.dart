@@ -33,9 +33,7 @@ class _LoginPageState extends State<LoginPage> {
       child: Center(
         child: Column(
           children: [
-            //add image
-
-            //add titles
+            //add logo
             const ImageWidget(
                 height: globals.logoheight,
                 width: globals.logowidth,
@@ -57,7 +55,7 @@ class _LoginPageState extends State<LoginPage> {
                     placeholder: globals.passwordPlaceHolder,
                     validator: _passwordValidator,
                     suffixIcon: globals.appendHidePasswordIcon,
-                  )
+                  ),
                 ],
               ),
             )
