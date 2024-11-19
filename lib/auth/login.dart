@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:wajibika_app/utils/globals.dart' as globals;
 import 'package:wajibika_app/widgets/image.dart';
 import 'package:wajibika_app/widgets/loginregisterbtn.dart';
+import 'package:wajibika_app/widgets/textButton.dart';
 import 'package:wajibika_app/widgets/textformfield.dart';
 
 class LoginPage extends StatefulWidget {
@@ -29,10 +30,16 @@ class _LoginPageState extends State<LoginPage> {
     return 'Please enter a password';
   }
 
+  //submit form
   void _submit() {
     if (_formKey.currentState!.validate()) {
-      Navigator.pushNamed(context, '/register');
+      Navigator.pushNamed(context, '/home');
     }
+  }
+
+  //to register page
+  void _toRegister() {
+    Navigator.pushNamed(context, '/register');
   }
 
   @override
@@ -70,6 +77,8 @@ class _LoginPageState extends State<LoginPage> {
                       clickAction: _submit,
                       btnColor: globals.loginBtnColor,
                       buttonText: globals.loginBtnText),
+                  //not a user? register
+                  TextButtonWidget(btnText: globals.notaUser, clickAction: _toRegister)
                 ],
               ),
             )

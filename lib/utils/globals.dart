@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 //padding
 const bottomPadding = EdgeInsets.only(bottom: 20); //specific cto widgets
@@ -23,6 +22,8 @@ const String emailPlaceholder = 'Email: johndoe@gmail.com';
 //buttontext
 const String loginBtnText = 'L O G I N';
 const String registerBtnText = 'R E G I S T E R';
+const String notaUser = 'Not a user? Register';
+const String alreadyRegistered = 'Already Registered? Login';
 
 //button dimensions
 const double buttonHeight = 50;

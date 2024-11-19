@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wajibika_app/auth/login.dart';
 import 'package:wajibika_app/auth/register.dart';
+import 'package:wajibika_app/pages/home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/login' : (context) => const LoginPage(),
         '/register' : (context) => const RegisterPage(),
+        '/home' : (context) => const HomePage(),
       },
     );
   }
