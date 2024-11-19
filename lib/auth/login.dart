@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wajibika_app/utils/globals.dart' as globals;
 import 'package:wajibika_app/widgets/image.dart';
+import 'package:wajibika_app/widgets/loginregisterbtn.dart';
 import 'package:wajibika_app/widgets/textformfield.dart';
 
 class LoginPage extends StatefulWidget {
@@ -18,12 +19,20 @@ class _LoginPageState extends State<LoginPage> {
   //form key
   final _formKey = GlobalKey<FormState>();
 
+  //email validation
   String? _emailValidator(String? email) {
     return 'Please enter email address';
   }
 
+  //password validation
   String? _passwordValidator(String? password) {
     return 'Please enter a password';
+  }
+
+  void _submit() {
+    if (_formKey.currentState!.validate()) {
+      Navigator.pushNamed(context, '/register');
+    }
   }
 
   @override
@@ -56,11 +65,14 @@ class _LoginPageState extends State<LoginPage> {
                     validator: _passwordValidator,
                     suffixIcon: globals.appendHidePasswordIcon,
                   ),
+                  //login button
+                  LoginRegisterButtonWidget(
+                      clickAction: _submit,
+                      btnColor: globals.loginBtnColor,
+                      buttonText: globals.loginBtnText),
                 ],
               ),
             )
-
-            //login button
           ],
         ),
       ),

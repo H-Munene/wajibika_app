@@ -20,6 +20,10 @@ const String firstNamePlaceHolder = 'First Name: John';
 const String lastNamePlaceHolder = 'Last Name: Doe';
 const String emailPlaceholder = 'Email: johndoe@gmail.com';
 
+//buttontext
+const String loginBtnText = 'L O G I N';
+const String registerBtnText = 'R E G I S T E R';
+
 //button dimensions
 const double buttonHeight = 50;
 const double buttonWidth = 400;
@@ -39,7 +43,7 @@ const appBackGroundColor = Color(0xFFF0E7D8);
 const subtitleColor = Color(0xFF4F4F4F);
 const buttonTextColor = Color(0xFFFFFFFF);
 const buttonBGColor = Color(0xFF6C4B5E);
-const itemtotalBtnColor = Color(0xFF6DA34D);
+const loginBtnColor = Color.fromARGB(255, 107, 154, 80);
 
 //icons
 const Icon emailPrependIcon = Icon(Icons.email);

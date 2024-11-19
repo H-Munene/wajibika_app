@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:wajibika_app/utils/globals.dart' as globals;
 
-class LoginRegisterButton extends StatelessWidget {
+class LoginRegisterButtonWidget extends StatelessWidget {
   final VoidCallback clickAction;
   final String buttonText;
   final Color btnColor;
 
-  const LoginRegisterButton(
+  const LoginRegisterButtonWidget(
       {super.key,
       required this.clickAction,
       required this.btnColor,
