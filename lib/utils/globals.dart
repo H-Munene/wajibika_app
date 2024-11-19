@@ -45,12 +45,14 @@ const subtitleColor = Color(0xFF4F4F4F);
 const buttonTextColor = Color(0xFFFFFFFF);
 const buttonBGColor = Color(0xFF6C4B5E);
 const loginBtnColor = Color.fromARGB(255, 107, 154, 80);
+const registerBGColor = Color(0xFF9A6735);
 
 //icons
 const Icon emailPrependIcon = Icon(Icons.email);
 const Icon passwordPrependIcon = Icon(Icons.key);
 const Icon appendShowPasswordIcon = Icon(Icons.visibility);
 const Icon appendHidePasswordIcon = Icon(Icons.visibility_off);
+const Icon usernamePrependIcon = Icon(Icons.person);
 
 // //image paths
 const String logo = 'assets/images/logo.png';
@@ -67,7 +69,7 @@ registerLoginLayout(Widget targetPage) {
       backgroundColor: primaryColor,
       automaticallyImplyLeading: false,
     ),
-    body: SafeArea(child: targetPage),
+    body: SingleChildScrollView(child: SafeArea(child: targetPage)),
   );
 }
 

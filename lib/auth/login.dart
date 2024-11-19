@@ -57,7 +57,7 @@ class _LoginPageState extends State<LoginPage> {
             //add textformfields
             Form(
               key: _formKey,
-              autovalidateMode: AutovalidateMode.onUserInteraction,
+              autovalidateMode: AutovalidateMode.onUnfocus,
               child: Column(
                 children: [
                   TextFormFieldWidget(
