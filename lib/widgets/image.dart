@@ -16,7 +16,7 @@ class ImageWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(
-          bottom: globals.loginBottomTitlePadding,
+          bottom: globals.loginBottomLogoPadding,
           top: globals.topLoginLogoPadding),
       child: Image(
         image: AssetImage(assetName),

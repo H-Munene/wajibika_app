@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wajibika_app/auth/login.dart';
+import 'package:wajibika_app/auth/register.dart';
+import 'package:wajibika_app/pages/home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,14 +16,18 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Wajibika' ,
+      title: 'Wajibika',
       theme: ThemeData(
         textTheme: GoogleFonts.montserratTextTheme(),
         colorScheme: const ColorScheme.light(),
-        useMaterial3: true,  
+        useMaterial3: true,
       ),
-    
       home: const LoginPage(),
+      routes: {
+        '/login': (context) => const LoginPage(),
+        '/register': (context) => const RegisterPage(),
+        '/home': (context) => const HomePage(),
+      },
     );
   }
 }
