@@ -12,27 +12,22 @@ class TextFormFieldWidget extends StatelessWidget {
       required this.prependIcon,
       required this.placeholder,
       required this.validator,
-      this.suffixIcon
-    });
+      this.suffixIcon});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-
         padding: globals.bottomPadding,
         child: TextFormField(
-        
           validator: validator,
           obscureText: (placeholder == 'Password: *******') ? true : false,
           decoration: InputDecoration(
-            prefixIcon: prependIcon,
-            suffixIcon: suffixIcon,
-            hintText: placeholder,
-            labelStyle: const TextStyle(
-              color: globals.placeholderColor,
-              fontSize: globals.normalTextFontSize
-            )
-          ),
+              prefixIcon: prependIcon,
+              suffixIcon: suffixIcon,
+              hintText: placeholder,
+              labelStyle: const TextStyle(
+                  color: globals.placeholderColor,
+                  fontSize: globals.normalTextFontSize)),
         ));
   }
 }

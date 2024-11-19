@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:wajibika_app/auth/login.dart';
 
 void main() {
@@ -15,8 +16,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Wajibika' ,
       theme: ThemeData(
-        useMaterial3: true,
+        textTheme: GoogleFonts.montserratTextTheme(),
+        useMaterial3: true,  
       ),
+    
       home: const LoginPage(),
     );
   }

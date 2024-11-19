@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
 //padding
 const bottomPadding = EdgeInsets.only(bottom: 20); //specific cto widgets
 const LRPadding = EdgeInsets.only(left: 20, right: 20); //left - right padding
@@ -7,7 +9,6 @@ const double topTitlePadding = 35;
 const double forgotpassBottomTitlePadding = 150;
 const double forgotpassTopTitlePadding = 45;
 const double ordersPageAllPadding = 20;
-
 
 const String appTitle = 'Wajibika';
 
@@ -29,16 +30,17 @@ const buttonBGColor = Color(0xFF6C4B5E);
 const itemtotalBtnColor = Color(0xFF6DA34D);
 
 //icons
-const Icon emailPrependIcon = Icon(Icons.email); 
+const Icon emailPrependIcon = Icon(Icons.email);
 const Icon passwordPrependIcon = Icon(Icons.key);
 const Icon appendShowPasswordIcon = Icon(Icons.visibility);
 const Icon appendHidePasswordIcon = Icon(Icons.visibility_off);
 
-//base layout 
+//base layout
 registerLoginLayout(Widget targetPage) {
   return Scaffold(
     appBar: AppBar(
-      title: const Text(appTitle, style: TextStyle(fontWeight: FontWeight.bold),),
+      title:
+          const Text(appTitle, style: TextStyle(fontStyle: FontStyle.italic)),
       backgroundColor: primaryColor,
       automaticallyImplyLeading: false,
     ),
