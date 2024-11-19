@@ -20,7 +20,7 @@ const double subtitleTextFontSize = 20;
 const double normalTextFontSize = 15;
 
 //colors
-const primaryColor = Color(0xFFFFFF);
+const primaryColor = Colors.white;
 const placeholderColor = Color(0xFF9A9A9A);
 const appBackGroundColor = Color(0xFFF0E7D8);
 const subtitleColor = Color(0xFF4F4F4F);
@@ -38,7 +38,7 @@ const Icon appendHidePasswordIcon = Icon(Icons.visibility_off);
 registerLoginLayout(Widget targetPage) {
   return Scaffold(
     appBar: AppBar(
-      title: const Text(appTitle),
+      title: const Text(appTitle, style: TextStyle(fontWeight: FontWeight.bold),),
       backgroundColor: primaryColor,
       automaticallyImplyLeading: false,
     ),

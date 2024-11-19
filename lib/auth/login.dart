@@ -15,6 +15,15 @@ class _LoginPageState extends State<LoginPage> {
       padding: globals.LRPadding,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          //add image
+
+          //add titles
+
+          //add textformfields
+          
+          //login button
+        ],
       ),
     ));
   }
