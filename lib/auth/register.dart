@@ -87,7 +87,6 @@ class _RegisterPageState extends State<RegisterPage> {
                   //register btn
                   LoginRegisterButtonWidget(
                       clickAction: _register,
-                      btnColor: globals.registerBGColor,
                       buttonText: globals.registerBtnText),
                   //already registered? Login
                   TextButtonWidget(

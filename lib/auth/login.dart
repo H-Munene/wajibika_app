@@ -35,47 +35,43 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    return globals.registerLoginLayout(Padding(
-      padding: globals.LRPadding,
-      child: Center(
-        child: Column(
-          children: [
-            //add logo
-            const ImageWidget(
-                height: globals.logoheight,
-                width: globals.logowidth,
-                assetName: globals.logo),
-            //add textformfields
-            Form(
-              key: _formKey,
-              autovalidateMode: AutovalidateMode.onUnfocus,
-              child: Column(
-                children: [
-                  TextFormFieldWidget(
-                      controller: emailController,
-                      prependIcon: globals.emailPrependIcon,
-                      placeholder: globals.emailPlaceholder,
-                      validator: ValidationService.emailValidator),
-                  TextFormFieldWidget(
-                    controller: passwordController,
-                    prependIcon: globals.passwordPrependIcon,
-                    placeholder: globals.passwordPlaceHolder,
-                    validator: ValidationService.passwordValidator,
-                    suffixIcon: globals.appendHidePasswordIcon,
-                  ),
-                  //login button
-                  LoginRegisterButtonWidget(
-                      clickAction: _submit,
-                      btnColor: globals.loginBtnColor,
-                      buttonText: globals.loginBtnText),
-                  //not a user? register
-                  TextButtonWidget(
-                      btnText: globals.notaUser, clickAction: _toRegister)
-                ],
-              ),
-            )
-          ],
-        ),
+    return globals.registerLoginLayout(Center(
+      child: Column(
+        children: [
+          //add logo
+          const ImageWidget(
+              height: globals.logoheight,
+              width: globals.logowidth,
+              assetName: globals.logo),
+          //add textformfields
+          Form(
+            key: _formKey,
+            autovalidateMode: AutovalidateMode.onUnfocus,
+            child: Column(
+              children: [
+                TextFormFieldWidget(
+                    controller: emailController,
+                    prependIcon: globals.emailPrependIcon,
+                    placeholder: globals.emailPlaceholder,
+                    validator: ValidationService.emailValidator),
+                TextFormFieldWidget(
+                  controller: passwordController,
+                  prependIcon: globals.passwordPrependIcon,
+                  placeholder: globals.passwordPlaceHolder,
+                  validator: ValidationService.passwordValidator,
+                  suffixIcon: globals.appendHidePasswordIcon,
+                ),
+                //login button
+                LoginRegisterButtonWidget(
+                    clickAction: _submit,
+                    buttonText: globals.loginBtnText),
+                //not a user? register
+                TextButtonWidget(
+                    btnText: globals.notaUser, clickAction: _toRegister)
+              ],
+            ),
+          )
+        ],
       ),
     ));
   }

@@ -4,12 +4,10 @@ import 'package:wajibika_app/utils/globals.dart' as globals;
 class LoginRegisterButtonWidget extends StatelessWidget {
   final VoidCallback clickAction;
   final String buttonText;
-  final Color btnColor;
 
   const LoginRegisterButtonWidget(
       {super.key,
       required this.clickAction,
-      required this.btnColor,
       required this.buttonText});
 
   @override
@@ -20,7 +18,7 @@ class LoginRegisterButtonWidget extends StatelessWidget {
       child: ElevatedButton(
         onPressed: clickAction,
         style: ElevatedButton.styleFrom(
-          backgroundColor: btnColor,
+          backgroundColor: globals.loginBtnColor,
         ),
         child: Text(
           buttonText,

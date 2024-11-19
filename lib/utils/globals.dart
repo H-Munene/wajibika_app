@@ -3,11 +3,8 @@ import 'package:flutter/material.dart';
 //padding
 const bottomPadding = EdgeInsets.only(bottom: 20); //specific cto widgets
 const LRPadding = EdgeInsets.only(left: 20, right: 20); //left - right padding
-const double loginBottomTitlePadding = 40;
-const double topLoginLogoPadding = 50;
-const double topRegisterLogoPadding = 35;
-const double forgotpassBottomTitlePadding = 150;
-const double forgotpassTopTitlePadding = 45;
+const double loginBottomLogoPadding = 40;
+const double topLoginLogoPadding = 10;
 const double ordersPageAllPadding = 20;
 
 //titles
@@ -69,7 +66,8 @@ registerLoginLayout(Widget targetPage) {
       backgroundColor: primaryColor,
       automaticallyImplyLeading: false,
     ),
-    body: SingleChildScrollView(child: SafeArea(child: targetPage)),
+    body: SingleChildScrollView(
+        child: SafeArea(child: Padding(padding: LRPadding, child: targetPage,))),
   );
 }
 
