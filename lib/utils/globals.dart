@@ -15,6 +15,16 @@ const String appTitle = 'Wajibika';
 
 //placeholders
 const String passwordPlaceHolder = 'Password: *******';
+const String firstNamePlaceHolder = 'First Name: John';
+const String lastNamePlaceHolder = 'Last Name: Doe';
+const String emailPlaceholder = 'Email: johndoe@gmail.com';
+
+//button dimensions
+const double buttonHeight = 50;
+const double buttonWidth = 400;
+const double ordersBtnWidth = 100;
+const double ordersBtnHeight = 25;
+const double textFieldBorderRadius = 15;
 
 //fonts
 const double titleFontSize = 30;
