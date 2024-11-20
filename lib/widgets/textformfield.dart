@@ -23,6 +23,7 @@ class TextFormFieldWidget extends StatelessWidget {
         padding: globals.bottomPadding,
         child: TextFormField(
           validator: validator,
+          controller: controller,
           obscureText: (placeholder == 'Password: *******') ? true : false,
           decoration: InputDecoration(
               prefixIcon: prependIcon,

@@ -25,7 +25,13 @@ class _LoginPageState extends State<LoginPage> {
   void _submit() {
     if (_formKey.currentState!.validate()) {
       Navigator.pushNamed(context, '/home');
+      _clearForm();
     }
+  }
+
+  void _clearForm() {
+    emailController.clear();
+    passwordController.clear();
   }
 
   //to register page
@@ -63,8 +69,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 //login button
                 LoginRegisterButtonWidget(
-                    clickAction: _submit,
-                    buttonText: globals.loginBtnText),
+                    clickAction: _submit, buttonText: globals.loginBtnText),
                 //not a user? register
                 TextButtonWidget(
                     btnText: globals.notaUser, clickAction: _toRegister)

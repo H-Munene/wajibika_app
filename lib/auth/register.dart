@@ -22,8 +22,23 @@ class _RegisterPageState extends State<RegisterPage> {
   final TextEditingController confirmPasswordController =
       TextEditingController();
 
+  String firstName = '';
+  String lastName = '';
+  String email = '';
+  String password = '';
+  String confirmPassword = '';
   //form key
   final _formKey = GlobalKey<FormState>();
+
+  String? _confirmpasswordValidator(String? confirmPassword) {
+    return (confirmPassword == null || confirmPassword.isEmpty)
+        ? 'Please enter a password'
+        : (!globals.passwordExp.hasMatch(confirmPassword))
+            ? 'Your password should have at leat 6 characters'
+            : (confirmPasswordController.text != passwordController.text)
+                ? 'Passwords do not match'
+                : null;
+  }
 
   //toLogin
   void _toLogin() {
@@ -33,8 +48,34 @@ class _RegisterPageState extends State<RegisterPage> {
   //register
   void _register() {
     if (_formKey.currentState!.validate()) {
+      setState(() {
+        firstName = firstnameController.text;
+        lastName = lastnameController.text;
+        email = emailController.text;
+        password = passwordController.text;
+        confirmPassword = confirmPasswordController.text;
+        _clearForm();
+      });
+
       Navigator.pushNamed(context, '/home');
     }
+  }
+
+  void _clearForm() {
+    firstnameController.clear();
+    lastnameController.clear();
+    emailController.clear();
+    passwordController.clear();
+    confirmPasswordController.clear();
+  }
+
+  @override
+  void dispose() {
+    firstnameController.dispose();
+    lastnameController.dispose();
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
   }
 
   @override
@@ -49,7 +90,7 @@ class _RegisterPageState extends State<RegisterPage> {
               assetName: globals.logo),
           Form(
               key: _formKey,
-              autovalidateMode: AutovalidateMode.onUnfocus,
+              autovalidateMode: AutovalidateMode.disabled,
               child: Column(
                 children: [
                   //firstname
@@ -83,7 +124,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       prependIcon: globals.passwordPrependIcon,
                       suffixIcon: globals.appendHidePasswordIcon,
                       placeholder: globals.passwordPlaceHolder,
-                      validator: ValidationService.passwordValidator),
+                      validator: _confirmpasswordValidator),
                   //register btn
                   LoginRegisterButtonWidget(
                       clickAction: _register,

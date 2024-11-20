@@ -59,6 +59,13 @@ const double logoheight = 115;
 const double logowidth = 115;
 const double appBarLogoWidth = 100;
 
+//REGEX form validation
+final passwordExp = RegExp(r'^.{6,}$'); //password not less than 6
+final nameRegExp = RegExp(r'^[a-zA-Z]+$'); //name regex
+final emailRegExp = RegExp(
+  r'^[^@]+@[^@]+\.[^@]+',
+); // email regex
+
 //base layout
 registerLoginLayout(Widget targetPage) {
   return Scaffold(
@@ -67,7 +74,11 @@ registerLoginLayout(Widget targetPage) {
       automaticallyImplyLeading: false,
     ),
     body: SingleChildScrollView(
-        child: SafeArea(child: Padding(padding: LRPadding, child: targetPage,))),
+        child: SafeArea(
+            child: Padding(
+      padding: LRPadding,
+      child: targetPage,
+    ))),
   );
 }
 
@@ -75,7 +86,6 @@ registerLoginLayout(Widget targetPage) {
 baseLayout(Widget targetPage) {
   return Scaffold(
     appBar: AppBar(
-      centerTitle: true,
       title: const Image(
         image: AssetImage(logo),
         width: appBarLogoWidth,
