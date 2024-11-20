@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wajibika_app/utils/globals.dart' as globals;
+import 'package:Wajibika/utils/globals.dart' as globals;
 
 class ImageWidget extends StatelessWidget {
   final String assetName;

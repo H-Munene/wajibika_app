@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wajibika_app/utils/globals.dart' as gloabls;
+import 'package:Wajibika/utils/globals.dart' as gloabls;
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

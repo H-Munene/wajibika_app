@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:wajibika_app/auth/login.dart';
-import 'package:wajibika_app/auth/register.dart';
-import 'package:wajibika_app/pages/home.dart';
+import 'package:Wajibika/auth/login.dart';
+import 'package:Wajibika/auth/register.dart';
+import 'package:Wajibika/pages/home.dart';
 
 void main() {
   runApp(const MyApp());
