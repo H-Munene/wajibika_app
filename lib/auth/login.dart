@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:wajibika_app/utils/globals.dart' as globals;
-import 'package:wajibika_app/utils/validationservice.dart';
-import 'package:wajibika_app/widgets/image.dart';
-import 'package:wajibika_app/widgets/loginregisterbtn.dart';
-import 'package:wajibika_app/widgets/textButton.dart';
-import 'package:wajibika_app/widgets/textformfield.dart';
+import 'package:Wajibika/utils/globals.dart' as globals;
+import 'package:Wajibika/utils/validationservice.dart';
+import 'package:Wajibika/widgets/image.dart';
+import 'package:Wajibika/widgets/loginregisterbtn.dart';
+import 'package:Wajibika/widgets/textButton.dart';
+import 'package:Wajibika/widgets/textformfield.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
