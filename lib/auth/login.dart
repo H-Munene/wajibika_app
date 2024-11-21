@@ -1,10 +1,11 @@
+import 'package:Wajibika/widgets/text_button.dart';
 import 'package:flutter/material.dart';
 import 'package:Wajibika/utils/globals.dart' as globals;
 import 'package:Wajibika/utils/validationservice.dart';
 import 'package:Wajibika/widgets/image.dart';
 import 'package:Wajibika/widgets/loginregisterbtn.dart';
-import 'package:Wajibika/widgets/textButton.dart';
 import 'package:Wajibika/widgets/textformfield.dart';
+
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -24,7 +25,7 @@ class _LoginPageState extends State<LoginPage> {
   //submit form
   void _submit() {
     if (_formKey.currentState!.validate()) {
-      Navigator.pushNamed(context, '/home');
+      Navigator.pushNamed(context, '/splashscreen');
       _clearForm();
     }
   }

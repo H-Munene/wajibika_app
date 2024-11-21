@@ -81,18 +81,3 @@ registerLoginLayout(Widget targetPage) {
     ))),
   );
 }
-
-//for non regeister,login pages
-baseLayout(Widget targetPage) {
-  return Scaffold(
-    appBar: AppBar(
-      title: const Image(
-        image: AssetImage(logo),
-        width: appBarLogoWidth,
-      ),
-      backgroundColor: primaryColor,
-      automaticallyImplyLeading: false,
-    ),
-    body: SafeArea(child: targetPage),
-  );
-}
