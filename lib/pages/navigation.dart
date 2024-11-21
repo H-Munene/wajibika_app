@@ -40,7 +40,7 @@ class _BasePageState extends State<BasePage> {
         backgroundColor: globals.primaryColor,
         automaticallyImplyLeading: false,
       ),
-      body: _pages[bottomNavBarItemIndex],
+      body: Scaffold(body: _pages[bottomNavBarItemIndex]),
       bottomNavigationBar: BottomNavigationBar(
           currentIndex: bottomNavBarItemIndex,
           onTap: _bottom_navbar_navigation,

@@ -10,10 +10,12 @@ class SettingsPage extends StatefulWidget {
 class _SettingsPageState extends State<SettingsPage> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(children: [
-        Text('in settings page'),
-      ],),
+    return const Center(
+      child: Column(
+        children: [
+          Text('in settings page'),
+        ],
+      ),
     );
   }
 }
