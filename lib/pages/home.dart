@@ -10,11 +10,6 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
-  final List pages = [
-    HomePage(),
-  
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(body: Text('in home'),);

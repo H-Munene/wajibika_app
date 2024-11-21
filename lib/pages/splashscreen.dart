@@ -1,8 +1,6 @@
-import 'dart:async';
-import 'dart:ui';
-
-import 'package:Wajibika/auth/login.dart';
 import 'package:flutter/material.dart';
+import 'dart:async';
+import 'package:Wajibika/pages/navigation.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -17,27 +15,17 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     Timer(const Duration(seconds: 3), () {
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => const LoginPage()));
+          context, MaterialPageRoute(builder: (context) => const BasePage()));
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        const Image(
-          image:
-              AssetImage('assets/images/pexels-ella-olsson-572949-1640772.jpg'),
-          height: double.infinity,
-          fit: BoxFit.cover,
-        ),
-        ClipRRect(
-            child: BackdropFilter(
-                filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-                child: Container(
-                  color: Colors.black.withOpacity(0.5),
-                ))),
-      ],
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [Text('All the data used is from the audit reports of the Office of the Attornet General')],
+      ),
     );
   }
 }

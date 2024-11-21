@@ -25,7 +25,7 @@ class _LoginPageState extends State<LoginPage> {
   //submit form
   void _submit() {
     if (_formKey.currentState!.validate()) {
-      Navigator.pushNamed(context, '/home');
+      Navigator.pushNamed(context, '/splashscreen');
       _clearForm();
     }
   }

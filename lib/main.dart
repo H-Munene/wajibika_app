@@ -1,3 +1,4 @@
+import 'package:Wajibika/pages/splashscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:Wajibika/auth/login.dart';
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
       ),
       home: const LoginPage(),
       routes: {
+        '/splashscreen': (context) => const SplashScreen(),
         '/login': (context) => const LoginPage(),
         '/register': (context) => const RegisterPage(),
         '/home': (context) => const HomePage(),
