@@ -1,9 +1,9 @@
+import 'package:Wajibika/widgets/text_button.dart';
 import 'package:flutter/material.dart';
 import 'package:Wajibika/utils/globals.dart' as globals;
 import 'package:Wajibika/utils/validationservice.dart';
 import 'package:Wajibika/widgets/image.dart';
 import 'package:Wajibika/widgets/loginregisterbtn.dart';
-import 'package:Wajibika/widgets/textButton.dart';
 import 'package:Wajibika/widgets/textformfield.dart';
 
 class RegisterPage extends StatefulWidget {
