@@ -9,19 +9,14 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
+  final List pages = [
+    HomePage(),
+  
+  ];
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-    appBar: AppBar(
-      title: const Image(
-        image: AssetImage(globals.logo),
-        width: globals.appBarLogoWidth,
-      ),
-      backgroundColor: globals.primaryColor,
-      automaticallyImplyLeading: false,
-    ),
-    body: Text("HOME"),
-    
-  );
+    return Scaffold(body: Text('in home'),);
   }
 }
