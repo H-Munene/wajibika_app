@@ -42,16 +42,18 @@ class _BasePageState extends State<BasePage> {
       ),
       body: _pages[bottomNavBarItemIndex],
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: bottomNavBarItemIndex,
-        onTap: _bottom_navbar_navigation,
-        items: const [
-        //home
-        BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-        //bookmark
-        BottomNavigationBarItem(icon: Icon(Icons.bookmark)),
-        //settings
-        BottomNavigationBarItem(icon: Icon(Icons.settings)),
-      ]),
+          currentIndex: bottomNavBarItemIndex,
+          onTap: _bottom_navbar_navigation,
+          items: const [
+            //home
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+            //bookmark
+            BottomNavigationBarItem(
+                icon: Icon(Icons.bookmark), label: 'Bookmarks'),
+            //settings
+            BottomNavigationBarItem(
+                icon: Icon(Icons.settings), label: 'Settings'),
+          ]),
     );
   }
 }
