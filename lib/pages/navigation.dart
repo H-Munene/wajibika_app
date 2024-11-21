@@ -36,9 +36,16 @@ class _BasePageState extends State<BasePage> {
         title: const Image(
           image: AssetImage(globals.logo),
           width: globals.appBarLogoWidth,
+          height: globals.logoheight,
         ),
         backgroundColor: globals.primaryColor,
         automaticallyImplyLeading: false,
+        actions: [
+          IconButton(onPressed: () {}, icon: const Icon(Icons.notifications)),
+          const SizedBox(
+            width: 40,
+          )
+        ],
       ),
       body: Scaffold(body: _pages[bottomNavBarItemIndex]),
       bottomNavigationBar: BottomNavigationBar(
