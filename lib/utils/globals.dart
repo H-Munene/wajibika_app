@@ -55,8 +55,8 @@ const Icon usernamePrependIcon = Icon(Icons.person);
 const String logo = 'assets/images/logo.png';
 
 //image dimensions
-const double logoheight = 115;
-const double logowidth = 115;
+const double logoheight = 40;
+const double logowidth = 100;
 const double appBarLogoWidth = 100;
 
 //REGEX form validation
