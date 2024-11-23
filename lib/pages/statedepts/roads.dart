@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:Wajibika/utils/globals.dart' as globals;
 
 class RoadsPage extends StatefulWidget {
   const RoadsPage({super.key});
@@ -10,6 +11,20 @@ class RoadsPage extends StatefulWidget {
 class _RoadsPageState extends State<RoadsPage> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Column(
+      children: [
+        //unproductive  expenditure
+        RichText(
+            text: TextSpan(
+                text: 'Unproductive Expenditure: ',
+                style: TextStyle(fontSize: globals.normalTextFontSize),
+                children: [
+                  TextSpan(
+                    
+                  )
+                ]))
+        //project card
+      ],
+    );
   }
 }
