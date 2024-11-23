@@ -8,7 +8,7 @@ const double topLoginLogoPadding = 10;
 const double ordersPageAllPadding = 20;
 
 //titles
-const String appTitle = 'Wajibika';
+const String appTitle = 'Wajibika'; 
 
 //placeholders
 const String passwordPlaceHolder = 'Password: *******';

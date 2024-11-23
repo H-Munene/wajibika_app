@@ -22,7 +22,6 @@ class _DropDownMenuWidgetState extends State<DropDownMenuWidget> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _menuItems = widget.menuItemsList;
     _onSelected = widget.onSelected;

@@ -43,11 +43,11 @@ class _BasePageState extends State<BasePage> {
         actions: [
           IconButton(onPressed: () {}, icon: const Icon(Icons.notifications)),
           const SizedBox(
-            width: 40,
+            width: 12,
           )
         ],
       ),
-      body: Scaffold(body: _pages[bottomNavBarItemIndex]),
+      body: Scaffold(body:SingleChildScrollView(child: _pages[bottomNavBarItemIndex]),
       bottomNavigationBar: BottomNavigationBar(
           currentIndex: bottomNavBarItemIndex,
           onTap: _bottom_navbar_navigation,
@@ -61,6 +61,6 @@ class _BasePageState extends State<BasePage> {
             BottomNavigationBarItem(
                 icon: Icon(Icons.settings), label: 'Settings'),
           ]),
-    );
+    ));
   }
 }
