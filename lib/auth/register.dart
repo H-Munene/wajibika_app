@@ -93,18 +93,18 @@ class _RegisterPageState extends State<RegisterPage> {
               autovalidateMode: AutovalidateMode.disabled,
               child: Column(
                 children: [
-                  //firstname
-                  TextFormFieldWidget(
-                      controller: firstnameController,
-                      prependIcon: globals.usernamePrependIcon,
-                      placeholder: globals.firstNamePlaceHolder,
-                      validator: ValidationService.usernameValidator),
-                  //lastname
-                  TextFormFieldWidget(
-                      controller: lastnameController,
-                      prependIcon: globals.usernamePrependIcon,
-                      placeholder: globals.lastNamePlaceHolder,
-                      validator: ValidationService.usernameValidator),
+                  // //firstname
+                  // TextFormFieldWidget(
+                  //     controller: firstnameController,
+                  //     prependIcon: globals.usernamePrependIcon,
+                  //     placeholder: globals.firstNamePlaceHolder,
+                  //     validator: ValidationService.usernameValidator),
+                  // //lastname
+                  // TextFormFieldWidget(
+                  //     controller: lastnameController,
+                  //     prependIcon: globals.usernamePrependIcon,
+                  //     placeholder: globals.lastNamePlaceHolder,
+                  //     validator: ValidationService.usernameValidator),
                   //email
                   TextFormFieldWidget(
                       controller: emailController,
