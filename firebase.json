@@ -1,0 +1,25 @@
+{
+    "flutter": {
+        "platforms": {
+            "android": {
+                "default": {
+                    "projectId": "wajibika-app",
+                    "appId": "1:637062336980:android:6019cd1f9a827975cfc641",
+                    "fileOutput": "android/app/google-services.json"
+                }
+            },
+            "dart": {
+                "lib/firebase_options.dart": {
+                    "projectId": "wajibika-app",
+                    "configurations": {
+                        "android": "1:637062336980:android:6019cd1f9a827975cfc641",
+                        "ios": "1:637062336980:ios:6cbe5b44fddbf3e4cfc641",
+                        "macos": "1:637062336980:ios:6cbe5b44fddbf3e4cfc641",
+                        "web": "1:637062336980:web:e6d585a489642442cfc641",
+                        "windows": "1:637062336980:web:2e19b7aab9249d3fcfc641"
+                    }
+                }
+            }
+        }
+    }
+}

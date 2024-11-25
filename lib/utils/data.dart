@@ -1,3 +1,5 @@
+final financialYears = ['2024','2023','2022'];
+
 final stalledMDAProjects = {
   "cumulativeTotalContractAmount(Kshs.)": "3,716,569,830",
   "cumulativeTotalAmountPaid (Kshs.)": "3,100,222,841",
