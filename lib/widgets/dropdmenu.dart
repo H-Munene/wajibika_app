@@ -35,8 +35,8 @@ class _DropDownMenuWidgetState extends State<DropDownMenuWidget> {
       controller: _controller,
       initialSelection: _menuItems![0],
       dropdownMenuEntries: _menuItems!
-          .map((menu_item) =>
-              DropdownMenuEntry(value: menu_item, label: menu_item))
+          .map((menuItem) =>
+              DropdownMenuEntry(value: menuItem, label: menuItem))
           .toList(),
       onSelected: _onSelected,
     );

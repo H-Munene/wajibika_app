@@ -15,7 +15,7 @@ class _RoadsPageState extends State<RoadsPage> {
       children: [
         //unproductive  expenditure
         RichText(
-            text: TextSpan(
+            text: const TextSpan(
                 text: 'Unproductive Expenditure: ',
                 style: TextStyle(fontSize: globals.normalTextFontSize),
                 children: [

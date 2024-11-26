@@ -10,7 +10,7 @@ class BookMarksPage extends StatefulWidget {
 class _BookMarksPageState extends State<BookMarksPage> {
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return const Center(
       child: Column(
         children: [
           Text('In bookmarks'),

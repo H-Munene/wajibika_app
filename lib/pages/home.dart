@@ -1,5 +1,4 @@
 import 'package:Wajibika/utils/data.dart';
-import 'package:Wajibika/widgets/dropdownbtn.dart';
 import 'package:Wajibika/widgets/titlebarRow.dart';
 import 'package:flutter/material.dart';
 import 'package:Wajibika/utils/globals.dart' as globals;
@@ -23,14 +22,14 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return const Padding(
-      padding: const EdgeInsets.only(left: 10, right: 10),
+      padding: EdgeInsets.only(left: 10, right: 10),
       child: Center(
         child: Column(
           children: [
             //Category bar : row -> (Category title, category item) -> filter icon
             TitleBarRow(),
             //chart
-            const Divider(
+            Divider(
               color: globals.loginBtnColor,
             )
             //list of categories
