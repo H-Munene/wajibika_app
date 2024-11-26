@@ -24,7 +24,7 @@ class _StateDepartentItemState extends State<StateDepartentItem> {
           Card(
             child: ExpansionTile(
               title: const Text(
-                'Interior Services',
+                'Interior and Citizen Services',
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: subtitleTextFontSize),
@@ -34,22 +34,42 @@ class _StateDepartentItemState extends State<StateDepartentItem> {
                   _customIcon ? Icons.arrow_drop_up : Icons.arrow_drop_down),
               children: [
                 Container(
-                  padding: const EdgeInsets.only(left: 15),
+                  padding: const EdgeInsets.only(left: 10),
                   child: Column(
                     children: [
                       //contract amount
-                      const Row(
-                        children: [
-                          Text('Contract amount: '),
-                          CounterUpWidget(end: 180000000, color: Colors.green),
-                        ],
+                      Container(
+                        padding: const EdgeInsets.only(bottom: 5),
+                        child: const Row(
+                          children: [
+                            SizedBox(
+                                width: 200,
+                                child: Text(
+                                    'Cumulative Contract amounts from all projects listed below: ')),
+                            Padding(padding: EdgeInsets.only(left: 10)),
+                            Text('Kshs.  ',
+                                style: TextStyle(color: Colors.green)),
+                            CounterUpWidget(
+                                end: 995275385, color: Colors.green),
+                          ],
+                        ),
                       ),
+
                       //amount paid
-                      const Row(
-                        children: [
-                          Text('Amount Paid: '),
-                          CounterUpWidget(end: 20234000, color: Colors.red),
-                        ],
+                      Container(
+                        padding: const EdgeInsets.only(bottom: 5),
+                        child: const Row(
+                          children: [
+                            SizedBox(
+                                width: 200,
+                                child: Text(
+                                    'Cumulative Amounts Paid from all projects listed below: ')),
+                            Padding(padding: EdgeInsets.only(left: 10)),
+                            Text('Kshs.  ',
+                                style: TextStyle(color: Colors.red)),
+                            CounterUpWidget(end: 156968272, color: Colors.red),
+                          ],
+                        ),
                       ),
                       //status , pulse animation
                       Row(
@@ -63,30 +83,57 @@ class _StateDepartentItemState extends State<StateDepartentItem> {
                           const Text('Stalled'),
                         ],
                       ),
-                      DataTable(columns: const [
-                        //Project(s)
-                        DataColumn(label: Text('Project(s)')),
-                        //Location
-                        DataColumn(label: Text('Location')),
-                        //amount allocated
-                        DataColumn(label: Text('amount allocated(Kshs.)')),
-                        //amount paid
-                        DataColumn(label: Text('amount paid(Kshs.)')),
-                      ], rows: const [
-                        DataRow(cells: [
-                          DataCell(Text('Borehole project at Njiiri School')),
-                          DataCell(Text("Murang'a")),
-                          DataCell(Text('9,430,012')),
-                          DataCell(Text('5,813,700')),
-                        ]),
-                      
-                        DataRow(cells: [
-                          DataCell(Text('Borehole project at Njiiri School')),
-                          DataCell(Text("Murang'a")),
-                          DataCell(Text('')),
-                          DataCell(Text('5,813,700')),
-                        ]),
-                      ])
+                      Table(
+                        border: TableBorder.all(),
+                        defaultVerticalAlignment:
+                            TableCellVerticalAlignment.middle,
+                        children: const [
+                          TableRow(children: [
+                            TableCell(child: Text('Projects')),
+                            TableCell(child: Text('Location')),
+                          ]),
+                          TableRow(children: [
+                            TableCell(
+                                child:
+                                    Text('Construction of DCC office block')),
+                            TableCell(child: Text('Tigania, Meru')),
+                          ]),
+                           TableRow(children: [
+                            TableCell(
+                                child:
+                                    Text('Construction of Tigania East Sub-County office block')),
+                            TableCell(child: Text('Muriri, Meru')),
+                          ]),
+                           TableRow(children: [
+                            TableCell(
+                                child:
+                                    Text('Construction of Magunga District Headquarters Suba South Sub-County')),
+                            TableCell(child: Text('Homa-bay')),
+                          ]),
+                           TableRow(children: [
+                            TableCell(
+                                child:
+                                    Text('Delayed completion of Mwea West Sub-County Headquarters')),
+                            TableCell(child: Text('Kirinyaga')),
+                          ]),
+                           TableRow(children: [
+                            TableCell(
+                                child:
+                                    Text('Construction of 100 PAX hostel block at Kenya School of Adventure and Leadership')),
+                            TableCell(child: Text('Meru')),
+                          ]),
+                        ],
+                      ),
+                      Container(
+                        padding: EdgeInsets.only(top: 5),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            IconButton(onPressed: (){}, icon: Icon(Icons.share)),
+                            IconButton(onPressed: (){}, icon: Icon(Icons.bookmark)),
+                          ],
+                        ),
+                      )
                     ],
                   ),
                 )
@@ -98,7 +145,6 @@ class _StateDepartentItemState extends State<StateDepartentItem> {
               },
             ),
           ),
-          
         ],
       ),
     );

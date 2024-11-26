@@ -14,6 +14,6 @@ class CounterUpWidget extends StatefulWidget {
 class _CounterUpWidgetState extends State<CounterUpWidget> {
   @override
   Widget build(BuildContext context) {
-    return Countup(begin: 0, end: widget.end, duration: const Duration(seconds: 10),separator: ',',style: TextStyle(color: widget.color),);
+    return Countup(begin: 0, end: widget.end, duration: const Duration(seconds: 10),separator: ',',style: TextStyle(color: widget.color, fontSize: 18),);
   }
 }

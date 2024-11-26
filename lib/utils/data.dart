@@ -271,7 +271,7 @@ final stalledMDAProjects = {
           "projects": [
             {
               "name":
-                  "Stalled construction of National Employment Promotion Centre and Research Institute Office Complex ",
+                  "Construction of National Employment Promotion Centre and Research Institute Office Complex",
               "location": "Kiambu",
               "status": "Stalled"
             },
@@ -411,7 +411,7 @@ final stalledMDAProjects = {
           "projects": [
             {
               "name":
-                  "Delayed completion of fifteen (15) projects at various court stations for over eight (8) years with 50% to 97% work done",
+                  "Fifteen (15) projects at various court stations for over eight (8) years with 50% to 97% work done",
               "location": "Inter-County",
               "status": "Stalled"
             },
@@ -432,7 +432,7 @@ final stalledMDAProjects = {
           "projects": [
             {
               "name":
-                  "Delayed completion of multi-storey office block, started on 1 July, 2014 and completion time extended to 30 November, 2021",
+                  "Multi-storey office block, started on 1 July, 2014 and completion time extended to 30 November, 2021",
               "location": "Nairobi",
               "status": "Stalled"
             },
@@ -453,7 +453,7 @@ final stalledMDAProjects = {
           "projects": [
             {
               "name":
-                  "Delayed implementation of the Green Climate Fund Project Phase I and II. GoK did not provide co-funding",
+                  "Implementation of the Green Climate Fund Project Phase I and II. GoK did not provide co-funding",
               "location": "Inter-County",
               "status": "Stalled"
             },
@@ -508,7 +508,7 @@ final stalledMDAProjects = {
           "projects": [
             {
               "name":
-                  "Delayed completion of construction and renovation of six (6) warehouses in six (6) Counties despite lapse of the contract periods",
+                  "Construction and renovation of six (6) warehouses in six (6) Counties despite lapse of the contract periods",
               "location": "Inter-County",
               "status": "Stalled"
             },
