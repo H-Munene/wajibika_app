@@ -1,4 +1,5 @@
 import 'package:Wajibika/utils/data.dart';
+import 'package:Wajibika/widgets/state_dept.dart';
 import 'package:Wajibika/widgets/titlebarRow.dart';
 import 'package:flutter/material.dart';
 import 'package:Wajibika/utils/globals.dart' as globals;
@@ -31,8 +32,9 @@ class _HomePageState extends State<HomePage> {
             //chart
             Divider(
               color: globals.loginBtnColor,
-            )
+            ),
             //list of categories
+            StateDepartentItem(),
           ],
         ),
       ),

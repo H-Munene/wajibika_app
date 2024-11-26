@@ -20,14 +20,14 @@ class _TitleBarRowState extends State<TitleBarRow> {
           children: [
             //Category item
             const Text(
-              'State Department',
+              'State Departments',
               style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: globals.subtitleTextFontSize),
             ),
             //as of financial year
             Text(
-              'Roads | as of $_asof',
+              'as of $_asof',
               style: const TextStyle(fontSize: 15),
             ),
           ],

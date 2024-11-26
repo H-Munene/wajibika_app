@@ -18,7 +18,7 @@ class _CountUpWidgetState extends State<CountUpWidget> {
       begin: 0,
       end: widget.end,
       separator: ',',
-      duration: const Duration(seconds: 30),
+      duration: const Duration(seconds: 40),
       style: const TextStyle(
           color: Colors.red, fontSize: globals.subtitleTextFontSize,), 
     );
