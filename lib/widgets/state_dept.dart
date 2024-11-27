@@ -1,7 +1,9 @@
 import 'package:Wajibika/utils/globals.dart';
 import 'package:flutter/material.dart';
 import 'package:Wajibika/widgets/countup.dart';
+import 'package:flutter/services.dart';
 import 'package:lottie/lottie.dart';
+import 'dart:convert';
 
 class StateDepartentItem extends StatefulWidget {
   const StateDepartentItem({super.key});
@@ -12,6 +14,23 @@ class StateDepartentItem extends StatefulWidget {
 
 class _StateDepartentItemState extends State<StateDepartentItem> {
   bool _customIcon = false;
+  dynamic projects = [];
+
+  Future<void> readJson() async {
+    final String response =
+        await rootBundle.loadString('assets/json/sample.json');
+    final data = await json.decode(response);
+    setState(() {
+      projects = data['details'];
+    });
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    readJson();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -98,28 +117,28 @@ class _StateDepartentItemState extends State<StateDepartentItem> {
                                     Text('Construction of DCC office block')),
                             TableCell(child: Text('Tigania, Meru')),
                           ]),
-                           TableRow(children: [
+                          TableRow(children: [
                             TableCell(
-                                child:
-                                    Text('Construction of Tigania East Sub-County office block')),
+                                child: Text(
+                                    'Construction of Tigania East Sub-County office block')),
                             TableCell(child: Text('Muriri, Meru')),
                           ]),
-                           TableRow(children: [
+                          TableRow(children: [
                             TableCell(
-                                child:
-                                    Text('Construction of Magunga District Headquarters Suba South Sub-County')),
+                                child: Text(
+                                    'Construction of Magunga District Headquarters Suba South Sub-County')),
                             TableCell(child: Text('Homa-bay')),
                           ]),
-                           TableRow(children: [
+                          TableRow(children: [
                             TableCell(
-                                child:
-                                    Text('Delayed completion of Mwea West Sub-County Headquarters')),
+                                child: Text(
+                                    'Delayed completion of Mwea West Sub-County Headquarters')),
                             TableCell(child: Text('Kirinyaga')),
                           ]),
-                           TableRow(children: [
+                          TableRow(children: [
                             TableCell(
-                                child:
-                                    Text('Construction of 100 PAX hostel block at Kenya School of Adventure and Leadership')),
+                                child: Text(
+                                    'Construction of 100 PAX hostel block at Kenya School of Adventure and Leadership')),
                             TableCell(child: Text('Meru')),
                           ]),
                         ],
@@ -129,8 +148,10 @@ class _StateDepartentItemState extends State<StateDepartentItem> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            IconButton(onPressed: (){}, icon: Icon(Icons.share)),
-                            IconButton(onPressed: (){}, icon: Icon(Icons.bookmark)),
+                            IconButton(
+                                onPressed: () {}, icon: Icon(Icons.share)),
+                            IconButton(
+                                onPressed: () {}, icon: Icon(Icons.bookmark)),
                           ],
                         ),
                       )

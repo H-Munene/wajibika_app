@@ -1,45 +1,45 @@
 {
-    "stateDepartment": "Interior and Citizen Services",
-    "Contract Amount (Kshs.)": "995,275,385",
-    "totalAmountPaid": "156,968,272",
-    "asOf": "30 June, 2023",
-    "projects groups": {
-        "group 1": {
-            "amount allocated": "764,444,795",
-            "amount paid": "36,245,978",
-            "projects": [
-                {
-                    "name": "Construction of DCC office block",
-                    "location": "Tigania, Meru",
-                    "status": "Stalled"
-                },
-                {
-                    "name": "Construction of Tigania East Sub-County office block",
-                    "location": "Muriri, Meru",
-                    "status": "Stalled"
-                },
-                {
-                    "name": "Construction of Magunga District Headquarters Suba South Sub-County",
-                    "location": "Homa-bay",
-                    "status": "Stalled"
-                }
-            ]
-        },
-        "group 2": {
-            "amount allocated": "230,830,590",
-            "amount paid": "120,722,294",
-            "projects": [
-                {
-                    "name": "Delayed completion of Mwea West Sub-County Headquarters",
-                    "location": "Kirinyaga",
-                    "status": "Stalled"
-                },
-                {
-                    "name": "Construction of 100 PAX hostel block at Kenya School of Adventure and Leadership",
-                    "location": "Meru",
-                    "status": "Stalled"
-                }
-            ]
+        "stateDepartment": "Interior and Citizen Services",
+        "contract Amount (Kshs.)": "995,275,385",
+        "totalAmountPaid": "156,968,272",
+        "asOf": "30 June, 2023",
+        "projects groups": {
+            "group 1": {
+                "amount allocated": "764,444,795",
+                "amount paid": "36,245,978",
+                "projects": [
+                    {
+                        "name": "Construction of DCC office block",
+                        "location": "Tigania, Meru",
+                        "status": "Stalled"
+                    },
+                    {
+                        "name": "Construction of Tigania East Sub-County office block",
+                        "location": "Muriri, Meru",
+                        "status": "Stalled"
+                    },
+                    {
+                        "name": "Construction of Magunga District Headquarters Suba South Sub-County",
+                        "location": "Homa-bay",
+                        "status": "Stalled"
+                    }
+                ]
+            },
+            "group 2": {
+                "amount allocated": "230,830,590",
+                "amount paid": "120,722,294",
+                "projects": [
+                    {
+                        "name": "Delayed completion of Mwea West Sub-County Headquarters",
+                        "location": "Kirinyaga",
+                        "status": "Stalled"
+                    },
+                    {
+                        "name": "Construction of 100 PAX hostel block at Kenya School of Adventure and Leadership",
+                        "location": "Meru",
+                        "status": "Stalled"
+                    }
+                ]
+            }
         }
     }
-}, //e
