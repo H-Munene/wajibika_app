@@ -1,8 +1,8 @@
 final financialYears = ['2023', '2024'];
 
 final stalledMDAProjects = {
-  "cumulativeTotalContractAmount(Kshs.)": "3,716,569,830",
-  "cumulativeTotalAmountPaid (Kshs.)": "3,100,222,841",
+  "totalcumulativeContractsAmount(Kshs.)": "3,716,569,830",
+  "totalcumulativeAmountsPaid (Kshs.)": "3,100,222,841",
   "source": [
     "SUMMARY OF THE AUDITOR-GENERAL'S REPORT ON NATIONAL GOVERNMENT 2022/2023"
   ],
@@ -10,8 +10,8 @@ final stalledMDAProjects = {
     {
       //interior services
       "stateDepartment": "Interior and Citizen Services",
-      "Contract Amount (Kshs.)": "995,275,385",
-      "totalAmountPaid": "156,968,272",
+      "cumulative Contract Amounts (Kshs.)": "995,275,385",
+      "cumulative AmountPaid": "156,968,272",
       "asOf": "30 June, 2023",
 
       "projects": [
@@ -47,8 +47,8 @@ final stalledMDAProjects = {
     {
       //water and sanitation
       "stateDepartment": "Water and Sanitation",
-      "Contract Amount (Kshs.)": "2,279,500,662",
-      "totalAmountPaid": "449,495,494",
+      "cumulative Contract Amounts (Kshs.)": "2,279,500,662",
+      "cumulative AmountPaid": "449,495,494",
       "asOf": "30 June, 2023",
 
       "projects": [
@@ -90,8 +90,8 @@ final stalledMDAProjects = {
     {
       //Foreign Affairs
       "stateDepartment": "Foreign Affairs",
-      "Contract Amount (Kshs.)": "418,865,923",
-      "totalAmountPaid": "415,904,556",
+      "cumulative Contract Amounts (Kshs.)": "418,865,923",
+      "cumulative AmountPaid": "415,904,556",
       "asOf": "30 June, 2023",
 
       "projects": [
@@ -106,8 +106,8 @@ final stalledMDAProjects = {
     {
       //Livestock
       "stateDepartment": "Livestock",
-      "Contract Amount (Kshs.)": "8,863,275",
-      "totalAmountPaid": "undisclosed",
+      "cumulative Contract Amounts (Kshs.)": "8,863,275",
+      "cumulative AmountPaid": "undisclosed",
       "asOf": "30 June, 2023",
 
       "projects": [
@@ -122,8 +122,8 @@ final stalledMDAProjects = {
     {
       //Devolution
       "stateDepartment": "Devolution",
-      "Contract Amount (Kshs.)": "890,829,345",
-      "totalAmountPaid": "250,000,000",
+      "cumulative Contract Amounts (Kshs.)": "890,829,345",
+      "cumulative AmountPaid": "250,000,000",
       "asOf": "30 June, 2023",
 
       "projects": [
@@ -137,9 +137,9 @@ final stalledMDAProjects = {
     {
       //NPS
       "stateDepartment": "National Police Service",
-      "Contract Amount (Kshs.)":
+      "cumulative Contract Amounts (Kshs.)":
           "105,365,412", //Undisclosed for Embakasi A hence *
-      "totalAmountPaid": "38,855,887", //undisclosed for Laisamis hence *
+      "cumulative AmountPaid": "38,855,887", //undisclosed for Laisamis hence *
       "asOf": "30 June, 2023",
 
       "projects": [
@@ -158,8 +158,8 @@ final stalledMDAProjects = {
     {
       //Sports
       "stateDepartment": "State Department for Sports Development",
-      "Contract Amount (Kshs.)": "345,766,644",
-      "totalAmountPaid": "undisclosed",
+      "cumulative Contract Amounts (Kshs.)": "345,766,644",
+      "cumulative AmountPaid": "undisclosed",
       "asOf": "30 June, 2023",
 
       "projects": [
@@ -173,8 +173,8 @@ final stalledMDAProjects = {
     {
       //Correctional Services
       "stateDepartment": "Correctional Services",
-      "Contract Amount (Kshs.)": "28,812,175",
-      "totalAmountPaid": "12,846,470",
+      "cumulative Contract Amounts (Kshs.)": "28,812,175",
+      "cumulative AmountPaid": "12,846,470",
       "asOf": "30 June, 2023",
 
       "projects": [
@@ -188,8 +188,8 @@ final stalledMDAProjects = {
     {
       //Housing and Urban Development
       "stateDepartment": "Housing and Urban Development",
-      "Contract Amount (Kshs.)": "64,000,000",
-      "totalAmountPaid": "35,000,000",
+      "cumulative Contract Amounts (Kshs.)": "64,000,000",
+      "cumulative AmountPaid": "35,000,000",
       "asOf": "30 June, 2023",
 
       "projects": [
@@ -204,8 +204,8 @@ final stalledMDAProjects = {
     {
       //Labour and Skills Development
       "stateDepartment": "Labour and Skill Development",
-      "Contract Amount (Kshs.)": "556,763,065",
-      "totalAmountPaid": "339,314,478",
+      "cumulative Contract Amounts (Kshs.)": "556,763,065",
+      "cumulative AmountPaid": "339,314,478",
       "asOf": "30 June, 2023",
 
       "projects": [
@@ -220,8 +220,8 @@ final stalledMDAProjects = {
     {
       //Technical, Vocational Education and Training
       "stateDepartment": "Technical, Vocational Education and Training",
-      "Contract Amount (Kshs.)": "48,743,504",
-      "totalAmountPaid": "26,700,000",
+      "cumulative Contract Amounts (Kshs.)": "48,743,504",
+      "cumulative AmountPaid": "26,700,000",
       "asOf": "30 June, 2023",
 
       "projects": [
@@ -236,8 +236,8 @@ final stalledMDAProjects = {
     {
       // TSC
       "stateDepartment": "Teachers Service Commission",
-      "Contract Amount (Kshs.)": "122,563,447",
-      "totalAmountPaid": "undisclosed",
+      "cumulative Contract Amounts (Kshs.)": "122,563,447",
+      "cumulative AmountPaid": "undisclosed",
       "asOf": "30 June, 2023",
 
       "projects": [
@@ -258,8 +258,8 @@ final stalledMDAProjects = {
     {
       // Crop Development
       "stateDepartment": "Crop Development",
-      "Contract Amount (Kshs.)": "178,581,150",
-      "totalAmountPaid": "24,358,930",
+      "cumulative Contract Amounts (Kshs.)": "178,581,150",
+      "cumulative AmountPaid": "24,358,930",
       "asOf": "30 June, 2023",
 
       "projects": [
@@ -283,8 +283,8 @@ final stalledMDAProjects = {
     {
       // State Department for Petroleum
       "stateDepartment": "Petroleum",
-      "Contract Amount (Kshs.)": "76,500,000",
-      "totalAmountPaid": "undisclosed",
+      "cumulative Contract Amounts (Kshs.)": "76,500,000",
+      "cumulative AmountPaid": "undisclosed",
       "asOf": "30 June, 2023",
 
       "projects": [
@@ -298,8 +298,8 @@ final stalledMDAProjects = {
     {
       // State Department for Public Works
       "stateDepartment": "Public Works",
-      "Contract Amount (Kshs.)": "987,189,903",
-      "totalAmountPaid": "579,635,580",
+      "cumulative Contract Amounts (Kshs.)": "987,189,903",
+      "cumulative AmountPaid": "579,635,580",
       "asOf": "30 June, 2023",
 
       "projects": [
@@ -314,8 +314,8 @@ final stalledMDAProjects = {
     {
       // State Department for Public Works
       "stateDepartment": "The Judiciary",
-      "Contract Amount (Kshs.)": "826,329,820",
-      "totalAmountPaid": "undisclosed",
+      "cumulative Contract Amounts (Kshs.)": "826,329,820",
+      "cumulative AmountPaid": "undisclosed",
       "asOf": "30 June, 2023",
 
       "projects": [
@@ -330,8 +330,8 @@ final stalledMDAProjects = {
     {
       // Parliamentary Joint Services
       "stateDepartment": "Parliamentary Joint Services",
-      "Contract Amount (Kshs.)": "undisclosed",
-      "totalAmountPaid": "752,448,996",
+      "cumulative Contract Amounts (Kshs.)": "undisclosed",
+      "cumulative AmountPaid": "752,448,996",
       "asOf": "30 June, 2023",
 
       "projects": [
@@ -346,8 +346,8 @@ final stalledMDAProjects = {
     {
       // Energy
       "stateDepartment": "Energy",
-      "Contract Amount (Kshs.)": "3,055,985,900",
-      "totalAmountPaid": "undisclosed",
+      "cumulative Contract Amounts (Kshs.)": "3,055,985,900",
+      "cumulative AmountPaid": "undisclosed",
       "asOf": "30 June, 2023",
 
       "projects": [
@@ -362,9 +362,9 @@ final stalledMDAProjects = {
     {
       // State Department for Medical Services
       "stateDepartment": "Medical Services",
-      "Contract Amount (Kshs.)":
+      "cumulative Contract Amounts (Kshs.)":
           "2,280,000,000", //*due to undisclosed KNH BurnsCentre
-      "totalAmountPaid":
+      "cumulative AmountPaid":
           "131,647,317", //*due to undisclosed Kisii Cancer Center
       "asOf": "30 June, 2023",
 
@@ -385,8 +385,8 @@ final stalledMDAProjects = {
     {
       // Independent Electoral and Boundaries Commission
       "stateDepartment": "Independent Electoral and Boundaries Commission",
-      "Contract Amount (Kshs.)": "293,504,959",
-      "totalAmountPaid": "229,929,888",
+      "cumulative Contract Amounts (Kshs.)": "293,504,959",
+      "cumulative AmountPaid": "229,929,888",
       "asOf": "30 June, 2023",
 
       "projects": [
@@ -401,8 +401,8 @@ final stalledMDAProjects = {
     {
       // State Department of Transport
       "stateDepartment": "Transport",
-      "Contract Amount (Kshs.)": "153,129,261",
-      "totalAmountPaid": "137,044,745",
+      "cumulative Contract Amounts (Kshs.)": "153,129,261",
+      "cumulative AmountPaid": "137,044,745",
       "asOf": "30 June, 2023",
 
       "projects": [
