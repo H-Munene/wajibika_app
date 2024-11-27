@@ -4,7 +4,7 @@ class StateDepartment {
   final String stateDepartmentName;
   final String cumulativeContractAmounts;
   final String cumulativeAmountPaid;
-  final dynamic projects;
+  final List<Project> projects;
 
   StateDepartment(
       {required this.stateDepartmentName,
