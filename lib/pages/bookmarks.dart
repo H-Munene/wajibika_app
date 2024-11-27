@@ -13,7 +13,7 @@ class _BookMarksPageState extends State<BookMarksPage> {
     return const Center(
       child: Column(
         children: [
-          Text('In bookmarks'),
+          Text('in bookmarks page'),
         ],
       ),
     );

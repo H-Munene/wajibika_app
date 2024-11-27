@@ -41,13 +41,13 @@ class _BasePageState extends State<BasePage> {
         backgroundColor: globals.primaryColor,
         automaticallyImplyLeading: false,
         actions: [
-          IconButton(onPressed: () {}, icon: const Icon(Icons.notifications)),
+          IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
           const SizedBox(
             width: 12,
           )
         ],
       ),
-      body: Scaffold(body:SingleChildScrollView(child: _pages[bottomNavBarItemIndex]),
+      body: _pages[bottomNavBarItemIndex],
       bottomNavigationBar: BottomNavigationBar(
           currentIndex: bottomNavBarItemIndex,
           onTap: _bottom_navbar_navigation,
@@ -61,6 +61,6 @@ class _BasePageState extends State<BasePage> {
             BottomNavigationBarItem(
                 icon: Icon(Icons.settings), label: 'Settings'),
           ]),
-    ));
+    );
   }
 }
