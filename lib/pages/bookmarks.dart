@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:Wajibika/models/statedept_model.dart';
 import 'package:Wajibika/utils/globals.dart' as globals;
 import 'package:Wajibika/widgets/countup.dart';
+import 'package:Wajibika/widgets/share_bookmark_row.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:lottie/lottie.dart';
@@ -133,7 +134,8 @@ class _BookMarksPageState extends State<BookMarksPage> {
                               ]);
                             })
                           ],
-                        )
+                        ),
+                        ShareBookMarkWidget()
                       ]),
                 );
               },
