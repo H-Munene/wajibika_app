@@ -32,35 +32,36 @@ class _BasePageState extends State<BasePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Image(
-          image: AssetImage(globals.logo),
-          width: globals.appBarLogoWidth,
-          height: globals.logoheight,
+        appBar: AppBar(
+          title: const Image(
+            image: AssetImage(globals.logo),
+            width: globals.appBarLogoWidth,
+            height: globals.logoheight,
+          ),
+          backgroundColor: globals.primaryColor,
+          automaticallyImplyLeading: false,
+          actions: [
+            IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
+            const SizedBox(
+              width: 12,
+            )
+          ],
         ),
-        backgroundColor: globals.primaryColor,
-        automaticallyImplyLeading: false,
-        actions: [
-          IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
-          const SizedBox(
-            width: 12,
-          )
-        ],
-      ),
-      body: Scaffold(body:_pages[bottomNavBarItemIndex],
-      bottomNavigationBar: BottomNavigationBar(
-          currentIndex: bottomNavBarItemIndex,
-          onTap: _bottom_navbar_navigation,
-          items: const [
-            //home
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-            //bookmark
-            BottomNavigationBarItem(
-                icon: Icon(Icons.bookmark), label: 'Bookmarks'),
-            //settings
-            BottomNavigationBarItem(
-                icon: Icon(Icons.settings), label: 'Settings'),
-          ]),
-    ));
+        
+          body: _pages[bottomNavBarItemIndex],
+          bottomNavigationBar: BottomNavigationBar(
+              currentIndex: bottomNavBarItemIndex,
+              onTap: _bottom_navbar_navigation,
+              items: const [
+                //home
+                BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+                //bookmark
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.bookmark), label: 'Bookmarks'),
+                //settings
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.settings), label: 'Settings'),
+              ]),
+        );
   }
 }
