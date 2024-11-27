@@ -46,26 +46,26 @@ class _AllStateDeptsState extends State<AllStateDepts> {
       future: stateDepartments,
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return Center(child: CircularProgressIndicator());
+          return const Center(child: CircularProgressIndicator());
         } else if (snapshot.hasError) {
           return Center(child: Text('Error: ${snapshot.error}'));
         } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
-          return Center(child: Text('No Data Found'));
+          return const Center(child: Text('No Data Found'));
         } else {
           return ListView.builder(
-            physics: ScrollPhysics(),
+            physics: const ScrollPhysics(),
             scrollDirection: Axis.vertical,
             shrinkWrap: true,
             itemCount: snapshot.data!.length,
             itemBuilder: (context, index) {
               StateDepartment stateDepartment = snapshot.data![index];
               return Card(
-                margin: EdgeInsets.all(10),
+                margin: const EdgeInsets.all(10),
                 child: ExpansionTile(
                     shape: const Border(),
                     title: Text(
                       stateDepartment.stateDepartmentName,
-                      style: TextStyle(
+                      style: const TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: globals.subtitleTextFontSize),
                     ),
@@ -85,7 +85,7 @@ class _AllStateDeptsState extends State<AllStateDepts> {
                         : Icons.arrow_drop_down),
                     children: [
                       Container(
-                        padding: EdgeInsets.only(
+                        padding: const EdgeInsets.only(
                           left: 10,
                         ),
                         child: Column(
@@ -94,11 +94,11 @@ class _AllStateDeptsState extends State<AllStateDepts> {
                               padding: const EdgeInsets.only(bottom: 5),
                               child: Row(
                                 children: [
-                                  SizedBox(
+                                  const SizedBox(
                                       width: 200,
                                       child: Text(
                                           'Cumulative Contract amounts from all projects listed below: ')),
-                                  Text('Kshs.  ',
+                                  const Text('Kshs.  ',
                                       style: TextStyle(color: Colors.green)),
                                   parsetoDouble(stateDepartment
                                           .cumulativeContractAmounts)
@@ -114,29 +114,27 @@ class _AllStateDeptsState extends State<AllStateDepts> {
                                 ],
                               ),
                             ),
-          
+
                             //amount paid
                             Container(
                               padding: const EdgeInsets.only(bottom: 5),
                               child: Row(
                                 children: [
-                                  SizedBox(
+                                  const SizedBox(
                                       width: 200,
                                       child: Text(
                                           'Cumulative Amounts Paid from all projects listed below: ')),
-                                  Text('Kshs.  ',
+                                  const Text('Kshs.  ',
                                       style: TextStyle(color: Colors.red)),
-                                  parsetoDouble(stateDepartment
-                                          .cumulativeAmountPaid)
+                                  parsetoDouble(
+                                          stateDepartment.cumulativeAmountPaid)
                                       ? CounterUpWidget(
                                           end: double.parse(stateDepartment
                                               .cumulativeAmountPaid),
                                           color: Colors.red)
                                       : Text(
-                                          stateDepartment
-                                              .cumulativeAmountPaid,
-                                          style:
-                                              TextStyle(color: Colors.red)),
+                                          stateDepartment.cumulativeAmountPaid,
+                                          style: const TextStyle(color: Colors.red)),
                                 ],
                               ),
                             ),
@@ -171,7 +169,7 @@ class _AllStateDeptsState extends State<AllStateDepts> {
                                 })
                               ],
                             ),
-                            ShareBookMarkWidget()
+                            const ShareBookMarkWidget()
                           ],
                         ),
                       ),

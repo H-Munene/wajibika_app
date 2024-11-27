@@ -14,13 +14,6 @@ class _StateDepartentItemState extends State<StateDepartentItem> {
   bool _customIcon = false;
   dynamic projects = [];
 
-  // @override
-  // void initState() {
-  //   // TODO: implement initState
-  //   super.initState();
-  //   readJson();
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -129,14 +122,14 @@ class _StateDepartentItemState extends State<StateDepartentItem> {
                       ],
                     ),
                     Container(
-                      padding: EdgeInsets.only(top: 5),
+                      padding: const EdgeInsets.only(top: 5),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           IconButton(
-                              onPressed: () {}, icon: Icon(Icons.share)),
+                              onPressed: () {}, icon: const Icon(Icons.share)),
                           IconButton(
-                              onPressed: () {}, icon: Icon(Icons.bookmark)),
+                              onPressed: () {}, icon: const Icon(Icons.bookmark)),
                         ],
                       ),
                     )

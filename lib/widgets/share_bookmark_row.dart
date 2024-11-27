@@ -11,12 +11,12 @@ class _ShareBookMarkWidgetState extends State<ShareBookMarkWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(top: 5),
+      padding: const EdgeInsets.only(top: 5),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          IconButton(onPressed: () {}, icon: Icon(Icons.share)),
-          IconButton(onPressed: () {}, icon: Icon(Icons.bookmark)),
+          IconButton(onPressed: () {}, icon: const Icon(Icons.share)),
+          IconButton(onPressed: () {}, icon: const Icon(Icons.bookmark)),
         ],
       ),
     );

@@ -1,7 +1,6 @@
 import 'package:Wajibika/pages/statedepts/all_depts.dart';
 import 'package:Wajibika/utils/data.dart';
-import 'package:Wajibika/widgets/state_dept.dart';
-import 'package:Wajibika/widgets/titlebarRow.dart';
+import 'package:Wajibika/widgets/titlebar_row.dart';
 import 'package:flutter/material.dart';
 import 'package:Wajibika/utils/globals.dart' as globals;
 
@@ -23,8 +22,8 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: const Padding(
+    return const SingleChildScrollView(
+      child: Padding(
         padding: EdgeInsets.only(left: 5),
         child: Center(
           child: Column(
@@ -36,7 +35,7 @@ class _HomePageState extends State<HomePage> {
                 color: globals.loginBtnColor,
               ),
               //list of categories
-             AllStateDepts()
+              AllStateDepts()
             ],
           ),
         ),
