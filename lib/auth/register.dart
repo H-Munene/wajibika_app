@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:Wajibika/widgets/text_button.dart';
 import 'package:flutter/material.dart';
 import 'package:Wajibika/utils/globals.dart' as globals;
@@ -5,6 +7,8 @@ import 'package:Wajibika/utils/validationservice.dart';
 import 'package:Wajibika/widgets/image.dart';
 import 'package:Wajibika/widgets/loginregisterbtn.dart';
 import 'package:Wajibika/widgets/textformfield.dart';
+import 'package:http/http.dart' as http;
+import 'package:http/http.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -15,18 +19,13 @@ class RegisterPage extends StatefulWidget {
 
 class _RegisterPageState extends State<RegisterPage> {
   //controllers
-  final TextEditingController firstnameController = TextEditingController();
-  final TextEditingController lastnameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController confirmPasswordController =
       TextEditingController();
 
-  String firstName = '';
-  String lastName = '';
-  String email = '';
-  String password = '';
-  String confirmPassword = '';
+  var isLoading = false;
+ 
   //form key
   final _formKey = GlobalKey<FormState>();
 
@@ -46,24 +45,43 @@ class _RegisterPageState extends State<RegisterPage> {
   }
 
   //register
-  void _register() {
+  Future<void> _register() async {
     if (_formKey.currentState!.validate()) {
       setState(() {
-        firstName = firstnameController.text;
-        lastName = lastnameController.text;
-        email = emailController.text;
-        password = passwordController.text;
-        confirmPassword = confirmPasswordController.text;
-        _clearForm();
+        isLoading = true;
       });
 
-      Navigator.pushNamed(context, '/home');
+      final url = Uri.parse('http://127.0.0.1:8000/api/register');
+      final Response response = await http.post(url, body: {
+        'email': emailController.text,
+        'password': passwordController.text
+      });
+      final responseData = json.decode(response.body);
+      final responseMessage = responseData['message'];
+
+      if (response.statusCode == 201) {
+        setState(() {
+          isLoading = false;
+        });
+
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          content: Text('$responseMessage'),
+          duration: const Duration(seconds: 2),
+          backgroundColor: Colors.green,
+        ));
+        Navigator.pushNamed(context, '/login');
+      }else {
+         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          content: Text('$responseMessage'),
+          duration: const Duration(seconds: 2),
+          backgroundColor: Colors.red,
+        ));
+        
+      }
     }
   }
 
   void _clearForm() {
-    firstnameController.clear();
-    lastnameController.clear();
     emailController.clear();
     passwordController.clear();
     confirmPasswordController.clear();
@@ -71,8 +89,6 @@ class _RegisterPageState extends State<RegisterPage> {
 
   @override
   void dispose() {
-    firstnameController.dispose();
-    lastnameController.dispose();
     emailController.dispose();
     passwordController.dispose();
     super.dispose();
@@ -84,6 +100,7 @@ class _RegisterPageState extends State<RegisterPage> {
       child: Column(
         children: [
           //logo
+
           const ImageWidget(
               height: globals.logoheight,
               width: globals.logowidth,
@@ -93,18 +110,6 @@ class _RegisterPageState extends State<RegisterPage> {
               autovalidateMode: AutovalidateMode.disabled,
               child: Column(
                 children: [
-                  //firstname
-                  TextFormFieldWidget(
-                      controller: firstnameController,
-                      prependIcon: globals.usernamePrependIcon,
-                      placeholder: globals.firstNamePlaceHolder,
-                      validator: ValidationService.usernameValidator),
-                  //lastname
-                  TextFormFieldWidget(
-                      controller: lastnameController,
-                      prependIcon: globals.usernamePrependIcon,
-                      placeholder: globals.lastNamePlaceHolder,
-                      validator: ValidationService.usernameValidator),
                   //email
                   TextFormFieldWidget(
                       controller: emailController,
@@ -126,9 +131,22 @@ class _RegisterPageState extends State<RegisterPage> {
                       placeholder: globals.passwordPlaceHolder,
                       validator: _confirmpasswordValidator),
                   //register btn
-                  LoginRegisterButtonWidget(
-                      clickAction: _register,
-                      buttonText: globals.registerBtnText),
+                  isLoading
+                      ? SizedBox(
+                          height: globals.buttonHeight,
+                          width: globals.buttonWidth,
+                          child: ElevatedButton(
+                              onPressed: () {},
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: globals.loginBtnColor,
+                              ),
+                              child: const CircularProgressIndicator(
+                                strokeWidth: 2.0,
+                              )),
+                        )
+                      : LoginRegisterButtonWidget(
+                          clickAction: _register,
+                          buttonText: globals.registerBtnText),
                   //already registered? Login
                   TextButtonWidget(
                       btnText: globals.alreadyRegistered,

@@ -47,7 +47,7 @@ class _BasePageState extends State<BasePage> {
           )
         ],
       ),
-      body: _pages[bottomNavBarItemIndex],
+      body:  SingleChildScrollView(child:   _pages[bottomNavBarItemIndex]),
       bottomNavigationBar: BottomNavigationBar(
           currentIndex: bottomNavBarItemIndex,
           onTap: _bottom_navbar_navigation,
