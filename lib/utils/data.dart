@@ -1,8 +1,9 @@
 final financialYears = ['2023', '2024'];
 
 final stalledMDAProjects = {
-  "totalcumulativeContractsAmount(Kshs.)": "3,716,569,830",
-  "totalcumulativeAmountsPaid (Kshs.)": "3,100,222,841",
+  "totalcumulativeContractsAmount(Kshs.)": "3716569830",
+  "totalcumulativeAmountsPaid (Kshs.)": "3100222841",
+  "projectsHighlighted" : "38",
   "source": [
     "SUMMARY OF THE AUDITOR-GENERAL'S REPORT ON NATIONAL GOVERNMENT 2022/2023"
   ],
