@@ -1,13 +1,15 @@
 class HomeData {
   final String approximateValueofTaxpayermoneyLost;
-  final String projectsHighlightedctz;
+  final int projectsHighlightedctz;
   final String sourceCtz;
   final String asOfctz;
   final String sourcemda;
-  final String numberOfprojectsHighlightedmda;
+  final int numberOfprojectsHighlightedmda;
   final String cumulativeContractsAmount;
   final String cumulativeAmountsPaid;
   final String asOfDatemda;
+  final String mdaTitle;
+  final String ctzTitle;
 
   HomeData(
       {required this.sourcemda,
@@ -18,7 +20,9 @@ class HomeData {
       required this.approximateValueofTaxpayermoneyLost,
       required this.projectsHighlightedctz,
       required this.sourceCtz,
-      required this.asOfctz
+      required this.asOfctz,
+      required this.mdaTitle,
+      required this.ctzTitle
       });
 
   factory HomeData.fromJson(Map<String, dynamic> json) {
@@ -33,6 +37,8 @@ class HomeData {
         projectsHighlightedctz: json['projectsHighlightedctz'],
         sourceCtz: json['source_ctz'],
         asOfctz: json['asOfctz'],
+        mdaTitle: json['mda_title'],
+        ctzTitle: json['ctz_title']
         );
   }
 }
