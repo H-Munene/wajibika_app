@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 const bottomPadding = EdgeInsets.only(bottom: 20); //specific cto widgets
 const LRPadding = EdgeInsets.only(left: 20, right: 20); //left - right padding
 const double loginBottomLogoPadding = 40;
-const double topLoginLogoPadding = 10;
+const double topLoginLogoPadding = 80;
 const double ordersPageAllPadding = 20;
 
 //titles

@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:Wajibika/widgets/text_button.dart';
+import 'package:Wajibika/widgets/richtex_register_login.dart';
 import 'package:flutter/material.dart';
 import 'package:Wajibika/utils/globals.dart' as globals;
 import 'package:Wajibika/utils/validationservice.dart';
@@ -25,7 +25,7 @@ class _RegisterPageState extends State<RegisterPage> {
       TextEditingController();
 
   var isLoading = false;
- 
+
   //form key
   final _formKey = GlobalKey<FormState>();
 
@@ -70,13 +70,16 @@ class _RegisterPageState extends State<RegisterPage> {
           backgroundColor: Colors.green,
         ));
         Navigator.pushNamed(context, '/login');
-      }else {
-         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      } else {
+        setState(() {
+          isLoading = false;
+        });
+
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
           content: Text('$responseMessage'),
           duration: const Duration(seconds: 2),
           backgroundColor: Colors.red,
         ));
-        
       }
     }
   }
@@ -148,9 +151,10 @@ class _RegisterPageState extends State<RegisterPage> {
                           clickAction: _register,
                           buttonText: globals.registerBtnText),
                   //already registered? Login
-                  TextButtonWidget(
-                      btnText: globals.alreadyRegistered,
-                      clickAction: _toLogin),
+                  // TextButtonWidget(
+                  //     btnText: globals.alreadyRegistered,
+                  //     clickAction: _toLogin),
+                  const RichTextRegisterLogin(alreadyLoginOrRgister: 'Already Registered? ', loginOrRegister: 'L O G I N', redirect: '/login')
                 ],
               ))
         ],

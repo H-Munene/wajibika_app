@@ -1,5 +1,6 @@
 import 'package:Wajibika/pages/navigation.dart';
 import 'package:Wajibika/pages/splashscreen.dart';
+import 'package:Wajibika/pages/statedepts/all_depts.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:Wajibika/auth/login.dart';
@@ -24,13 +25,15 @@ class MyApp extends StatelessWidget {
         colorScheme: const ColorScheme.light(),
         useMaterial3: true,
       ),
-      home: const BasePage(),
+      home: const LoginPage(),
       routes: {
         '/splashscreen': (context) => const SplashScreen(),
         '/login': (context) => const LoginPage(),
         '/register': (context) => const RegisterPage(),
         '/home': (context) => const HomePage(),
         '/basepage' : (context) => const BasePage(),
+        '/mda-projects':  (context) => const AllStateDepts(),
+
       },
     );
   }
