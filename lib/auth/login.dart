@@ -36,30 +36,32 @@ class _LoginPageState extends State<LoginPage> {
         isLoading = true;
       });
       final url = Uri.parse("http://127.0.0.1:8000/api/login");
-      final Response response = await http.post(url, body: {
+      final response = await http.post(url, body: {
         'email': emailController.text,
         'password': passwordController.text
       });
       var responseData = json.decode(response.body);
       final responseMessage = responseData['message'];
-      final token = responseData['token'];
+      late final String token ;
 
-      SharedPreferences prefs = await SharedPreferences.getInstance();
-      prefs.setString('auth_token', token);
+      
 
-      if (response.statusCode == 201) {
+      if (response.statusCode == 200) {
         setState(() {
           isLoading = false;
         });
 
+        token = responseData['token'];
+        SharedPreferences prefs = await SharedPreferences.getInstance();
+        prefs.setString('token', token);
+        
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
           content: Text('$responseMessage'),
           duration: const Duration(seconds: 2),
           backgroundColor: Colors.green,
         ));
         Timer(const Duration(seconds: 2), () {
-          Navigator.pushReplacement(context,
-              MaterialPageRoute(builder: (context) => const HomePage()));
+          Navigator.pushNamed(context, '/basepage');
         });
       } else {
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
@@ -67,6 +69,9 @@ class _LoginPageState extends State<LoginPage> {
           duration: const Duration(seconds: 2),
           backgroundColor: Colors.red,
         ));
+        setState(() {
+          isLoading = false;
+        });
       }
       _clearForm();
     }
