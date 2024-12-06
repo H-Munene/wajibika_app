@@ -1,7 +1,9 @@
+import 'dart:convert';
 import 'package:Wajibika/models/citizen_audit_model.dart';
 import 'package:Wajibika/utils/globals.dart' as globals;
 import 'package:Wajibika/widgets/share_bookmark_row.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
 class CitizenAuditedProjects extends StatefulWidget {
   const CitizenAuditedProjects({super.key});
@@ -12,9 +14,38 @@ class CitizenAuditedProjects extends StatefulWidget {
 
 class _CitizenAuditedProjectsState extends State<CitizenAuditedProjects> {
   late final List<CitizenAuditData> citizenAuditedProjects;
+  late final List<CitizenAuditData> filteredData;
   final bool _customIcon = false;
   final isDouble = false;
   bool isLoading = false;
+
+  Future<void> _loadJson() async{
+    setState(() {
+      isLoading = true;
+    });
+    final url = Uri.parse('http://127.0.0.1:8000/api/citizen-audited-projects');
+    final response = await http.get(url);
+    late final dynamic responseData;
+    if (response.statusCode == 200) {
+      responseData = json.decode(response.body);
+    }
+    setState(() {
+      citizenAuditedProjects = (responseData as List)
+          .map((citizenAuditData) => CitizenAuditData.fromJson(citizenAuditData))
+          .toList();
+          filteredData = citizenAuditedProjects.where((data) =>
+    data.projects.isNotEmpty).toList();
+      isLoading = false;
+    });
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _loadJson();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,9 +53,9 @@ class _CitizenAuditedProjectsState extends State<CitizenAuditedProjects> {
       physics: const ScrollPhysics(),
       scrollDirection: Axis.vertical,
       shrinkWrap: true,
-      itemCount: citizenAuditedProjects.length,
+      itemCount: filteredData.length,
       itemBuilder: (context, index) {
-        final citizenAuditProject = citizenAuditedProjects[index];
+        final citizenAuditProject = filteredData[index];
         return Card(
           margin: const EdgeInsets.all(10),
           child: ExpansionTile(
@@ -80,13 +111,13 @@ class _CitizenAuditedProjectsState extends State<CitizenAuditedProjects> {
                             TableCell(
                                 child: Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child: Text(project.amountAllocated),
+                              child: Text(project.amountAllocated, style: const TextStyle(color: Colors.green),),
                             )),
                             //amount paid
                             TableCell(
                                 child: Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child: Text(project.amountPaid),
+                              child: Text(project.amountPaid, style: const TextStyle(color: Colors.red),),
                             )),
                             //status
                             TableCell(
