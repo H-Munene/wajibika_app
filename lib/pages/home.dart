@@ -19,7 +19,6 @@ class _HomePageState extends State<HomePage> {
     late final dynamic responseData;
     if (response.statusCode == 200) {
       responseData = json.decode(response.body);
-      print(responseData);
     }
     return HomeData.fromJson(responseData);
   }

@@ -21,8 +21,8 @@ class StateDepartment {
     return StateDepartment(
       stateDepartmentName: json['stateDepartment'],
       cumulativeContractAmounts:
-          json['cumulative Contract Amounts (Kshs.)'].toString(),
-      cumulativeAmountPaid: json['cumulative AmountPaid'].toString(),
+          json['cumulativeContractAmounts (Kshs.)'].toString(),
+      cumulativeAmountPaid: json['cumulativeAmountPaid'].toString(),
       projects: projectList,
     );
   }
