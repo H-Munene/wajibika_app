@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         colorScheme: const ColorScheme.light(),
         useMaterial3: true,
       ),
-      home: const BasePage(),
+      home: const LoginPage(),
       routes: {
         '/splashscreen': (context) => const SplashScreen(),
         '/login': (context) => const LoginPage(),

@@ -1,16 +1,14 @@
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:Wajibika/pages/home.dart';
+import 'package:Wajibika/widgets/richtex_register_login.dart';
 import 'package:flutter/material.dart';
-import 'package:Wajibika/widgets/text_button.dart';
 import 'package:Wajibika/utils/globals.dart' as globals;
 import 'package:Wajibika/utils/validationservice.dart';
 import 'package:Wajibika/widgets/image.dart';
 import 'package:Wajibika/widgets/loginregisterbtn.dart';
 import 'package:Wajibika/widgets/textformfield.dart';
 import 'package:http/http.dart' as http;
-import 'package:http/http.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginPage extends StatefulWidget {
@@ -132,8 +130,7 @@ class _LoginPageState extends State<LoginPage> {
                     : LoginRegisterButtonWidget(
                         clickAction: _submit, buttonText: globals.loginBtnText),
                 //not a user? register
-                TextButtonWidget(
-                    btnText: globals.notaUser, clickAction: _toRegister)
+                const RichTextRegisterLogin(alreadyLoginOrRgister: 'Not Registered? ', loginOrRegister: 'R E G I S T E R', redirect: '/register')
               ],
             ),
           )
