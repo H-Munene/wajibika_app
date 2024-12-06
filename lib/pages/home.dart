@@ -45,7 +45,7 @@ class _HomePageState extends State<HomePage> {
                     children: [
                       //source
                       Text(
-                        "source: ${homeData.mdaTitle}",
+                        "source: ${homeData.sourcemda}",
                         style: const TextStyle(
                             fontSize: 11,
                             fontStyle: FontStyle.italic,
@@ -178,11 +178,15 @@ class _HomePageState extends State<HomePage> {
                         ],
                       ),
                       const Padding(padding: EdgeInsets.only(top: 10)),
-                      const Row(
+                      Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           ElevatedButton(
-                              onPressed: null, child: Text('More details')),
+                              onPressed: () {
+                                Navigator.pushNamed(
+                                    context, '/citizen-audited-projects');
+                              },
+                              child: const Text('More details')),
                         ],
                       ),
                     ],

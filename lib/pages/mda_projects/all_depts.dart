@@ -20,9 +20,6 @@ class _AllStateDeptsState extends State<AllStateDepts> {
   final isDouble = false;
   bool isLoading = false;
   Future<void> _loadJson() async {
-    // String jsonString = await rootBundle.loadString('assets/json/sample.json');
-    // final jsonResponse = json.decode(jsonString) as List;
-    // return jsonResponse.map((data) => StateDepartment.fromJson(data)).toList();
     setState(() {
       isLoading = true;
     });
