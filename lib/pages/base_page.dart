@@ -1,6 +1,5 @@
 import 'package:Wajibika/pages/bookmarks.dart';
 import 'package:Wajibika/pages/home.dart';
-import 'package:Wajibika/pages/settings.dart';
 import 'package:flutter/material.dart';
 import 'package:Wajibika/utils/globals.dart' as globals;
 
@@ -16,7 +15,7 @@ class _BasePageState extends State<BasePage> {
   final List _pages = [
     const HomePage(),
     const BookMarksPage(),
-    const SettingsPage(),
+
   ];
 
   //page index
@@ -40,12 +39,7 @@ class _BasePageState extends State<BasePage> {
         ),
         backgroundColor: globals.primaryColor,
         automaticallyImplyLeading: true,
-        actions: [
-          IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
-          const SizedBox(
-            width: 12,
-          )
-        ],
+        
       ),
       body:  SingleChildScrollView(child:   _pages[bottomNavBarItemIndex]),
       bottomNavigationBar: BottomNavigationBar(
@@ -57,9 +51,7 @@ class _BasePageState extends State<BasePage> {
             //bookmark
             BottomNavigationBarItem(
                 icon: Icon(Icons.bookmark), label: 'Bookmarks'),
-            //settings
-            BottomNavigationBarItem(
-                icon: Icon(Icons.settings), label: 'Settings'),
+          
           ]),
     );
   }

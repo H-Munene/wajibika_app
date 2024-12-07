@@ -1,11 +1,12 @@
 import 'dart:convert';
 import 'package:Wajibika/models/statedept_model.dart';
+import 'package:Wajibika/providers/bookmarks_provider.dart';
 import 'package:Wajibika/utils/globals.dart' as globals;
 import 'package:Wajibika/widgets/countup.dart';
-import 'package:Wajibika/widgets/share_bookmark_row.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:lottie/lottie.dart';
+import 'package:provider/provider.dart';
 
 class AllStateDepts extends StatefulWidget {
   const AllStateDepts({super.key});
@@ -81,6 +82,7 @@ class _AllStateDeptsState extends State<AllStateDepts> {
 
   @override
   Widget build(BuildContext context) {
+    final provider = Provider.of<BookmarksProvider>(context);
     return Scaffold(
         appBar: AppBar(
           automaticallyImplyLeading: true,
@@ -238,7 +240,24 @@ class _AllStateDeptsState extends State<AllStateDepts> {
                                       })
                                     ],
                                   ),
-                                  const ShareBookMarkWidget()
+                                  Container(
+                                    padding: const EdgeInsets.only(top: 5),
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.end,
+                                      children: [
+                                        IconButton(
+                                            onPressed: () {
+                                              provider.toggleBookmark(
+                                                  stateDepartment);
+                                            },
+                                            icon: provider.isBookmarked(
+                                                    stateDepartment)
+                                                ? const Icon(Icons.bookmark)
+                                                : const Icon(
+                                                    Icons.bookmark_outline)),
+                                      ],
+                                    ),
+                                  )
                                 ],
                               ),
                             ),
