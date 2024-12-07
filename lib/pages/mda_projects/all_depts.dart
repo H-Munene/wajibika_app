@@ -1,10 +1,8 @@
 import 'dart:convert';
 import 'package:Wajibika/models/statedept_model.dart';
-import 'package:Wajibika/pages/bookmarks.dart';
 import 'package:Wajibika/providers/bookmarks_provider.dart';
 import 'package:Wajibika/utils/globals.dart' as globals;
 import 'package:Wajibika/widgets/countup.dart';
-import 'package:Wajibika/widgets/share_bookmark_row.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:lottie/lottie.dart';

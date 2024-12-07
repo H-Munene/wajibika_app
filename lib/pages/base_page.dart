@@ -1,6 +1,5 @@
 import 'package:Wajibika/pages/bookmarks.dart';
 import 'package:Wajibika/pages/home.dart';
-import 'package:Wajibika/pages/settings.dart';
 import 'package:flutter/material.dart';
 import 'package:Wajibika/utils/globals.dart' as globals;
 
