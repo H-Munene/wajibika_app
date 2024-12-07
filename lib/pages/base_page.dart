@@ -39,7 +39,7 @@ class _BasePageState extends State<BasePage> {
           height: globals.logoheight,
         ),
         backgroundColor: globals.primaryColor,
-        automaticallyImplyLeading: false,
+        automaticallyImplyLeading: true,
         actions: [
           IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
           const SizedBox(

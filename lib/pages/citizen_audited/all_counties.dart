@@ -50,6 +50,9 @@ class _CitizenAuditedProjectsState extends State<CitizenAuditedProjects> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          automaticallyImplyLeading: true,
+        ),
         body: isLoading
             ? const Center(
                 child: CircularProgressIndicator(),
