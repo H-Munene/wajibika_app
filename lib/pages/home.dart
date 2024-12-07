@@ -30,7 +30,7 @@ class _HomePageState extends State<HomePage> {
       future: getHomePageData(),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return const CircularProgressIndicator();
+          return const Center(child: CircularProgressIndicator());
         } else if (snapshot.hasError) {
           return Text('Error: ${snapshot.error}');
         } else if (snapshot.hasData) {
@@ -183,9 +183,14 @@ class _HomePageState extends State<HomePage> {
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           ElevatedButton(
-                              onPressed: (){
-                                Navigator.push(context, MaterialPageRoute(builder: (context) => const CitizenAuditedProjects()));
-                              }, child: const Text('More details')),
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const CitizenAuditedProjects()));
+                              },
+                              child: const Text('More details')),
                         ],
                       ),
                     ],
