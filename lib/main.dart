@@ -1,6 +1,7 @@
+import 'package:Wajibika/pages/citizen_audited/all_counties.dart';
 import 'package:Wajibika/pages/navigation.dart';
 import 'package:Wajibika/pages/splashscreen.dart';
-import 'package:Wajibika/pages/statedepts/all_depts.dart';
+import 'package:Wajibika/pages/mda_projects/all_depts.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:Wajibika/auth/login.dart';
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
         colorScheme: const ColorScheme.light(),
         useMaterial3: true,
       ),
-      home: const LoginPage(),
+      home: const BasePage(),
       routes: {
         '/splashscreen': (context) => const SplashScreen(),
         '/login': (context) => const LoginPage(),
@@ -33,6 +34,7 @@ class MyApp extends StatelessWidget {
         '/home': (context) => const HomePage(),
         '/basepage' : (context) => const BasePage(),
         '/mda-projects':  (context) => const AllStateDepts(),
+        '/citizen-audited-projects': (context) => const CitizenAuditedProjects(),
 
       },
     );

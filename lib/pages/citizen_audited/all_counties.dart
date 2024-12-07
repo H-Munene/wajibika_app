@@ -1,0 +1,157 @@
+import 'dart:convert';
+import 'package:Wajibika/models/citizen_audit_model.dart';
+import 'package:Wajibika/utils/globals.dart' as globals;
+import 'package:Wajibika/widgets/share_bookmark_row.dart';
+import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+
+class CitizenAuditedProjects extends StatefulWidget {
+  const CitizenAuditedProjects({super.key});
+
+  @override
+  State<CitizenAuditedProjects> createState() => _CitizenAuditedProjectsState();
+}
+
+class _CitizenAuditedProjectsState extends State<CitizenAuditedProjects> {
+  late final List<CitizenAuditData> citizenAuditedProjects;
+  late final List<CitizenAuditData> filteredData;
+  final bool _customIcon = false;
+  final isDouble = false;
+  bool isLoading = false;
+
+  Future<void> _loadJson() async {
+    setState(() {
+      isLoading = true;
+    });
+    final url = Uri.parse('http://127.0.0.1:8000/api/citizen-audited-projects');
+    final response = await http.get(url);
+    late final dynamic responseData;
+    if (response.statusCode == 200) {
+      responseData = json.decode(response.body);
+    }
+    setState(() {
+      citizenAuditedProjects = (responseData as List)
+          .map(
+              (citizenAuditData) => CitizenAuditData.fromJson(citizenAuditData))
+          .toList();
+      filteredData = citizenAuditedProjects
+          .where((data) => data.projects.isNotEmpty)
+          .toList();
+      isLoading = false;
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _loadJson();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: isLoading
+            ? const Center(
+                child: CircularProgressIndicator(),
+              )
+            : ListView.builder(
+                physics: const ScrollPhysics(),
+                scrollDirection: Axis.vertical,
+                shrinkWrap: true,
+                itemCount: filteredData.length,
+                itemBuilder: (context, index) {
+                  final citizenAuditProject = filteredData[index];
+                  return Card(
+                    margin: const EdgeInsets.all(10),
+                    child: ExpansionTile(
+                      shape: const Border(),
+                      title: Text(
+                        citizenAuditProject.countyName,
+                        style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: globals.subtitleTextFontSize),
+                      ),
+                      trailing: Icon(_customIcon
+                          ? Icons.arrow_drop_up
+                          : Icons.arrow_drop_down),
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.only(left: 10),
+                          child: Column(
+                            children: [
+                              //projects
+                              Table(
+                                border: TableBorder.all(),
+                                children: [
+                                  const TableRow(children: [
+                                    TableCell(
+                                        child: Padding(
+                                      padding: EdgeInsets.all(8),
+                                      child: Text('Project Name'),
+                                    )),
+                                    TableCell(
+                                        child: Padding(
+                                      padding: EdgeInsets.all(8),
+                                      child: Text('Amount Allocated'),
+                                    )),
+                                    TableCell(
+                                        child: Padding(
+                                      padding: EdgeInsets.all(8),
+                                      child: Text('Amount Paid'),
+                                    )),
+                                    TableCell(
+                                        child: Padding(
+                                      padding: EdgeInsets.all(8),
+                                      child: Text('Status'),
+                                    )),
+                                  ]),
+                                  ...citizenAuditProject.projects
+                                      .map((project) {
+                                    return TableRow(children: [
+                                      //project name
+                                      TableCell(
+                                          child: Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Text(project.name),
+                                      )),
+                                      //amount allocated
+                                      TableCell(
+                                          child: Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Text(
+                                          project.amountAllocated,
+                                          style: const TextStyle(
+                                              color: Colors.green),
+                                        ),
+                                      )),
+                                      //amount paid
+                                      TableCell(
+                                          child: Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Text(
+                                          project.amountPaid,
+                                          style: const TextStyle(
+                                              color: Colors.red),
+                                        ),
+                                      )),
+                                      //status
+                                      TableCell(
+                                          child: Padding(
+                                              padding:
+                                                  const EdgeInsets.all(8.0),
+                                              child: Text(project.status)))
+                                    ]);
+                                  })
+                                ],
+                              ),
+                              const ShareBookMarkWidget()
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              ));
+  }
+}

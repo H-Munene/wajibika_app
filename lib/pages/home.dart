@@ -179,11 +179,13 @@ class _HomePageState extends State<HomePage> {
                         ],
                       ),
                       const Padding(padding: EdgeInsets.only(top: 10)),
-                      const Row(
+                      Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           ElevatedButton(
-                              onPressed: null, child: Text('More details')),
+                              onPressed: (){
+                                Navigator.pushNamed(context, '/citizen-audited-projects');
+                              }, child: const Text('More details')),
                         ],
                       ),
                     ],
