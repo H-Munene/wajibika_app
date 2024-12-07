@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:Wajibika/models/home_data.dart';
+import 'package:Wajibika/pages/citizen_audited/all_counties.dart';
 import 'package:Wajibika/utils/globals.dart' as globals;
 import 'package:Wajibika/widgets/countup.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +20,6 @@ class _HomePageState extends State<HomePage> {
     late final dynamic responseData;
     if (response.statusCode == 200) {
       responseData = json.decode(response.body);
-      print(responseData);
     }
     return HomeData.fromJson(responseData);
   }
@@ -30,7 +30,7 @@ class _HomePageState extends State<HomePage> {
       future: getHomePageData(),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return const CircularProgressIndicator();
+          return const Center(child: CircularProgressIndicator());
         } else if (snapshot.hasError) {
           return Text('Error: ${snapshot.error}');
         } else if (snapshot.hasData) {
@@ -46,7 +46,7 @@ class _HomePageState extends State<HomePage> {
                     children: [
                       //source
                       Text(
-                        "source: ${homeData.mdaTitle}",
+                        "source: ${homeData.sourcemda}",
                         style: const TextStyle(
                             fontSize: 11,
                             fontStyle: FontStyle.italic,
@@ -117,7 +117,7 @@ class _HomePageState extends State<HomePage> {
                               onPressed: () {
                                 Navigator.pushNamed(context, '/mda-projects');
                               },
-                              child: Text('More details')),
+                              child: const Text('More details')),
                         ],
                       )
                     ],
@@ -183,9 +183,14 @@ class _HomePageState extends State<HomePage> {
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           ElevatedButton(
-                              onPressed: (){
-                                Navigator.pushNamed(context, '/citizen-audited-projects');
-                              }, child: const Text('More details')),
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const CitizenAuditedProjects()));
+                              },
+                              child: const Text('More details')),
                         ],
                       ),
                     ],

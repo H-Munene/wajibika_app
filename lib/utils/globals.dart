@@ -1,3 +1,6 @@
+import 'package:Wajibika/pages/bookmarks.dart';
+import 'package:Wajibika/pages/home.dart';
+import 'package:Wajibika/pages/settings.dart';
 import 'package:flutter/material.dart';
 
 //padding
@@ -81,3 +84,38 @@ registerLoginLayout(Widget targetPage) {
     ))),
   );
 }
+
+baseLayout(int bottomNavBarItemIndex,void Function(int)? onTap,Widget targetPage, ) {
+    
+  return Scaffold(
+  appBar: AppBar(
+    automaticallyImplyLeading: true,
+  ),
+    body: SingleChildScrollView(child: targetPage,),
+    bottomNavigationBar: BottomNavigationBar(
+          currentIndex: bottomNavBarItemIndex,
+          onTap: onTap,
+          items: const [
+            //home
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+            //bookmark
+            BottomNavigationBarItem(
+                icon: Icon(Icons.bookmark), label: 'Bookmarks'),
+            //settings
+            BottomNavigationBarItem(
+                icon: Icon(Icons.settings), label: 'Settings'),
+          ]),
+  );
+}
+
+ final List pages = [
+    const HomePage(),
+    const BookMarksPage(),
+    const SettingsPage(),
+  ];
+
+  //page index
+
+
+  //navigate the bottomnavbar
+  
