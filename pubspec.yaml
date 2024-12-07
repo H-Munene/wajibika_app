@@ -66,6 +66,10 @@ flutter:
   assets:
     - assets/images/logo.png
     - assets/animations/red_pulse.json
+    - assets/animations/black_pulse.json
+    - assets/animations/grey_pulse.json
+    - assets/animations/orange_pulse.json
+    - assets/animations/yellow_pulse.json
     - assets/json/sample.json
     - assets/json/oag_intro_tile.json
     - assets/json/citizen_intro_tile.json
