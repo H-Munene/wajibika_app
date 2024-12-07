@@ -1,3 +1,4 @@
+import 'package:Wajibika/pages/bookmarks.dart';
 import 'package:Wajibika/pages/citizen_audited/all_counties.dart';
 import 'package:Wajibika/pages/base_page.dart';
 import 'package:Wajibika/pages/splashscreen.dart';
@@ -39,6 +40,7 @@ class MyApp extends StatelessWidget {
           '/basepage' : (context) => const BasePage(),
           '/mda-projects':  (context) => const AllStateDepts(),
           '/citizen-audited-projects': (context) => const CitizenAuditedProjects(),
+          '/bookmarks':(context)=> const BookMarksPage(),
       
         },
       ),
