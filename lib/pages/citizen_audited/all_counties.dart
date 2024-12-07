@@ -1,9 +1,10 @@
 import 'dart:convert';
 import 'package:Wajibika/models/citizen_audit_model.dart';
+import 'package:Wajibika/providers/bookmarks_provider.dart';
 import 'package:Wajibika/utils/globals.dart' as globals;
-import 'package:Wajibika/widgets/share_bookmark_row.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:provider/provider.dart';
 
 class CitizenAuditedProjects extends StatefulWidget {
   const CitizenAuditedProjects({super.key});
@@ -75,6 +76,7 @@ class _CitizenAuditedProjectsState extends State<CitizenAuditedProjects> {
 
   @override
   Widget build(BuildContext context) {
+    final provider = Provider.of<BookmarksProvider>(context);
     return Scaffold(
         appBar: AppBar(
           automaticallyImplyLeading: true,
@@ -84,34 +86,34 @@ class _CitizenAuditedProjectsState extends State<CitizenAuditedProjects> {
                 child: CircularProgressIndicator(),
               )
             : Column(
-              children: [
-                Container(
-                  padding: const EdgeInsets.only(left: 10, right: 10),
-                  child: TextField(
-                    controller: searchController,
-                    onChanged: (value) => _runFilter(value),
-                    decoration: InputDecoration(
-                        suffixIcon: searchIsEmpty
-                            ? const Icon(Icons.search)
-                            : IconButton(
-                                onPressed: () {
-                                  searchController.clear();
-                                  setState(() {
-                                    foundCounty = filteredData;
-                                    searchIsEmpty = true;
-                                  });
-                                },
-                                icon: const Icon(Icons.close)),
-                        hintText: 'County Name',
-                        hintStyle: const TextStyle(
-                            fontSize: globals.normalTextFontSize,
-                            color: globals.placeholderColor),
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20))),
+                children: [
+                  Container(
+                    padding: const EdgeInsets.only(left: 10, right: 10),
+                    child: TextField(
+                      controller: searchController,
+                      onChanged: (value) => _runFilter(value),
+                      decoration: InputDecoration(
+                          suffixIcon: searchIsEmpty
+                              ? const Icon(Icons.search)
+                              : IconButton(
+                                  onPressed: () {
+                                    searchController.clear();
+                                    setState(() {
+                                      foundCounty = filteredData;
+                                      searchIsEmpty = true;
+                                    });
+                                  },
+                                  icon: const Icon(Icons.close)),
+                          hintText: 'County Name',
+                          hintStyle: const TextStyle(
+                              fontSize: globals.normalTextFontSize,
+                              color: globals.placeholderColor),
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(20))),
+                    ),
                   ),
-                ),
-                Expanded(
-                  child: ListView.builder(
+                  Expanded(
+                    child: ListView.builder(
                       physics: const ScrollPhysics(),
                       scrollDirection: Axis.vertical,
                       shrinkWrap: true,
@@ -168,13 +170,15 @@ class _CitizenAuditedProjectsState extends State<CitizenAuditedProjects> {
                                             //project name
                                             TableCell(
                                                 child: Padding(
-                                              padding: const EdgeInsets.all(8.0),
+                                              padding:
+                                                  const EdgeInsets.all(8.0),
                                               child: Text(project.name),
                                             )),
                                             //amount allocated
                                             TableCell(
                                                 child: Padding(
-                                              padding: const EdgeInsets.all(8.0),
+                                              padding:
+                                                  const EdgeInsets.all(8.0),
                                               child: Text(
                                                 project.amountAllocated,
                                                 style: const TextStyle(
@@ -184,7 +188,8 @@ class _CitizenAuditedProjectsState extends State<CitizenAuditedProjects> {
                                             //amount paid
                                             TableCell(
                                                 child: Padding(
-                                              padding: const EdgeInsets.all(8.0),
+                                              padding:
+                                                  const EdgeInsets.all(8.0),
                                               child: Text(
                                                 project.amountPaid,
                                                 style: const TextStyle(
@@ -195,13 +200,33 @@ class _CitizenAuditedProjectsState extends State<CitizenAuditedProjects> {
                                             TableCell(
                                                 child: Padding(
                                                     padding:
-                                                        const EdgeInsets.all(8.0),
-                                                    child: Text(project.status)))
+                                                        const EdgeInsets.all(
+                                                            8.0),
+                                                    child:
+                                                        Text(project.status)))
                                           ]);
                                         })
                                       ],
                                     ),
-                                    const ShareBookMarkWidget()
+                                    Container(
+                                      padding: const EdgeInsets.only(top: 5),
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.end,
+                                        children: [
+                                          IconButton(
+                                              onPressed: () {
+                                                provider.toggleCtzBookmark(
+                                                    citizenAuditProject);
+                                              },
+                                              icon: provider.ctzisBookmarked(
+                                                      citizenAuditProject)
+                                                  ? const Icon(Icons.bookmark)
+                                                  : const Icon(
+                                                      Icons.bookmark_outline)),
+                                        ],
+                                      ),
+                                    )
                                   ],
                                 ),
                               ),
@@ -210,8 +235,8 @@ class _CitizenAuditedProjectsState extends State<CitizenAuditedProjects> {
                         );
                       },
                     ),
-                ),
-              ],
-            ));
+                  ),
+                ],
+              ));
   }
 }

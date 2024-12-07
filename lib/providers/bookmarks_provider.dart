@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 
 class BookmarksProvider extends ChangeNotifier {
   final List<StateDepartment> _statedepartments = [];
-  final List<CitizenAuditData> _citizenAuditedPeojects = [];
+  final List<CitizenAuditData> _citizenAuditedProjects = [];
 
   //getters
   List<StateDepartment> get stateDepartments => _statedepartments;
-  List<CitizenAuditData> get citizenAuditData => _citizenAuditedPeojects;
+  List<CitizenAuditData> get citizenAuditData => _citizenAuditedProjects;
 
   void toggleBookmark(StateDepartment stateDepartment) {
     //ascertain if present in list
@@ -22,5 +22,29 @@ class BookmarksProvider extends ChangeNotifier {
     }
 
     notifyListeners();
+  }
+
+  //determine if a statedepartment has been bookmarked
+  bool isBookmarked(StateDepartment stateDepartment) {
+    return _statedepartments.contains(stateDepartment);
+  }
+
+   void toggleCtzBookmark(CitizenAuditData citizenAuditData) {
+    //ascertain if present in list
+    final ctzisBookmarked = _citizenAuditedProjects.contains(citizenAuditData);
+    if(ctzisBookmarked) {
+      //remove if present
+      _citizenAuditedProjects.remove(citizenAuditData);
+    }else {
+      //add if absent
+      _citizenAuditedProjects.add(citizenAuditData);
+    }
+
+    notifyListeners();
+  }
+
+  //determine if a statedepartment has been bookmarked
+  bool ctzisBookmarked(CitizenAuditData citizenAuditData) {
+    return _citizenAuditedProjects.contains(citizenAuditData);
   }
 }
